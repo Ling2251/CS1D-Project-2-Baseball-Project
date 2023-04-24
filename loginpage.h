@@ -5,6 +5,8 @@
 #include <iostream>
 #include <iomanip>
 #include <QString>
+#include <QMessageBox>
+#include "maintenancepage.h"
 using namespace std;
 
 

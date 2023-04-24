@@ -15,22 +15,24 @@ loginPage::~loginPage()
 
 void loginPage::on_pushButton_clicked()
 {
-    QString username, password;
+    QString username,password;
 
     username=ui->lineEdit_1->text();
     password=ui->lineEdit_2->text();
 
-    if(username == "user" && password == 12345)
+    if(username == "Admin" && password == "12345")
     {
-
-    }
-    else if(username == "admin" && password == 12345)
-    {
-
+        QMessageBox::information(this, "Login", "Logged in");
+        maintenancePage maintenance;
+        hide();
+        maintenance.setModal(true);
+        maintenance.exec();
     }
     else
     {
         ui->label_3->setText("username or password is incorrect, please try again");
+        //ui->label_3->setText(password);
+        QMessageBox::warning(this, "Login", "Username or Password is Incorrect");
     }
 
 
