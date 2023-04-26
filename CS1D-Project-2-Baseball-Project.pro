@@ -12,27 +12,37 @@ CONFIG += c++11
 
 SOURCES += \
     dbmanager.cpp \
+    differentdistance.cpp \
     displaypage.cpp \
     loginpage.cpp \
     main.cpp \
     maintenancepage.cpp \
     mainwindow.cpp \
-    planntingtrip.cpp
+    planntingtrip.cpp \
+    receiptpage.cpp \
+    souvenirshop.cpp
 
 HEADERS += \
+    connecteUIPgae.h \
     dbmanager.h \
+    differentdistance.h \
     displaypage.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
-    planntingtrip.h
+    planntingtrip.h \
+    receiptpage.h \
+    souvenirshop.h
 
 FORMS += \
+    differentdistance.ui \
     displaypage.ui \
     loginpage.ui \
     maintenancepage.ui \
     mainwindow.ui \
-    planntingtrip.ui
+    planntingtrip.ui \
+    receiptpage.ui \
+    souvenirshop.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
