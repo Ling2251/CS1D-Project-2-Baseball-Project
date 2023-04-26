@@ -7,6 +7,7 @@
 #include "maintenancepage.h"
 #include "differentdistance.h"
 
+// This class is mainy for connected all the UIs
 class ConnecteUIPage{
 public :
     void linkToLoginPage(){
@@ -38,7 +39,6 @@ public :
         distanceUI.setModal(true);
         distanceUI.exec();
     }
-
 };
 
 
