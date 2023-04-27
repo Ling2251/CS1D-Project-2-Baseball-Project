@@ -1,9 +1,9 @@
-#include "DBmanager.h"
+#include "dbmanager.h"
 
 DBmanager::DBmanager()
 {
     QSqlDatabase m_database = QSqlDatabase::addDatabase("QSQLITE");
-    //m_database.setDatabaseName("../collegelist.db");
+    m_database.setDatabaseName("../Baseball_Database.db");
 
     if(m_database.open())
     {

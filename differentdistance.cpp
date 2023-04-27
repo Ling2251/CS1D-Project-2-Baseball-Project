@@ -1,20 +1,20 @@
-#include "planntingtrip.h"
-#include "ui_planntingtrip.h"
+#include "differentdistance.h"
+#include "ui_differentdistance.h"
 #include "mainwindow.h"
 
-PlanntingTrip::PlanntingTrip(QWidget *parent) :
+DifferentDistance::DifferentDistance(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PlanntingTrip)
+    ui(new Ui::DifferentDistance)
 {
     ui->setupUi(this);
 }
 
-PlanntingTrip::~PlanntingTrip()
+DifferentDistance::~DifferentDistance()
 {
     delete ui;
 }
 
-void PlanntingTrip::on_mainPagrButton_clicked()
+void DifferentDistance::on_mainPagrButton_clicked()
 {
     QList<QWidget*> topLevelWidgets = qApp->topLevelWidgets();
     foreach(QWidget *widget, topLevelWidgets) {
