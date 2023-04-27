@@ -2,6 +2,13 @@
 #define LOGINPAGE_H
 
 #include <QDialog>
+#include <iostream>
+#include <iomanip>
+#include <QString>
+#include <QMessageBox>
+#include "maintenancepage.h"
+using namespace std;
+
 
 namespace Ui {
 class loginPage;
@@ -14,6 +21,11 @@ class loginPage : public QDialog
 public:
     explicit loginPage(QWidget *parent = nullptr);
     ~loginPage();
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::loginPage *ui;
