@@ -70,16 +70,6 @@
     <string>Sorted By:</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="StadiumtableWidget">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>70</y>
-     <width>1121</width>
-     <height>571</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="SortedLabel">
    <property name="geometry">
     <rect>
@@ -102,11 +92,80 @@
     <string/>
    </property>
   </widget>
+  <widget class="QComboBox" name="TeamComboBox">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>140</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DisplayLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Display This Team</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="StadiumtableWidget">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>1041</width>
+     <height>581</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="displayTeamInfo">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>170</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ok</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="StadiumtableView">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>1041</width>
+     <height>581</height>
+    </rect>
+   </property>
+  </widget>
   <zorder>BackgroundImag</zorder>
   <zorder>mainPagrButton</zorder>
   <zorder>label</zorder>
-  <zorder>StadiumtableWidget</zorder>
   <zorder>SortedLabel</zorder>
+  <zorder>TeamComboBox</zorder>
+  <zorder>DisplayLabel</zorder>
+  <zorder>StadiumtableWidget</zorder>
+  <zorder>displayTeamInfo</zorder>
+  <zorder>StadiumtableView</zorder>
  </widget>
  <resources/>
  <connections/>

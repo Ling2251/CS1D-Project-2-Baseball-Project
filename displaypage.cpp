@@ -7,14 +7,16 @@ DisplayPage::DisplayPage(QWidget *parent) :
     ui(new Ui::DisplayPage)
 {
     ui->setupUi(this);
+    // load team name in to the combo box
+    showTeamNameCombo(my_database.loadTeamNameOnly());
+    // load the data into the UI
+
 }
 
 DisplayPage::~DisplayPage()
 {
     delete ui;
 }
-
-
 
 void DisplayPage::on_mainPagrButton_clicked()
 {
@@ -30,5 +32,25 @@ void DisplayPage::on_mainPagrButton_clicked()
        }
     }
     hide();
+}
+
+// gets and display all the team name in the database to the combo box
+void DisplayPage::showTeamNameCombo(QSqlQueryModel *model){
+    ui->TeamComboBox->setModel(model);
+}
+
+// the UI that display the information , this is useing table view not table widget
+void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
+    // show the table view and hide the widget.
+    ui->StadiumtableView->setModel(model);
+    ui->StadiumtableWidget->hide();
+}
+
+// displays only one team information, base on what team name user selected in the combo box
+void DisplayPage::on_displayTeamInfo_clicked()
+{
+    QString name = ui->TeamComboBox->currentText();
+    showTeamInfoDisplay(my_database.loadTeamInfo(name));
+
 }
 

@@ -2,6 +2,7 @@
 #define DISPLAYPAGE_H
 
 #include <QDialog>
+#include "dbmanager.h"
 
 namespace Ui {
 class DisplayPage;
@@ -17,11 +18,16 @@ public:
 
 private slots:
 
-
     void on_mainPagrButton_clicked();
+
+    void on_displayTeamInfo_clicked();
 
 private:
     Ui::DisplayPage *ui;
+    DBmanager my_database;
+
+    void showTeamNameCombo(QSqlQueryModel *model);
+    void showTeamInfoDisplay(QSqlQueryModel *model);
 };
 
 #endif // DISPLAYPAGE_H
