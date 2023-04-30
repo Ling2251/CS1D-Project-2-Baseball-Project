@@ -47,18 +47,18 @@ QSqlQueryModel* DBmanager::loadTeamInfo(QString selectedTeamName){
     {
         qDebug() << "\nError Loading baseball team name\n";
     }else{
-//        for (auto & i : teamInfo){   //iterate through all objects in the vector
-//            QString teamName                = i.teamName;
-//            QString stadiumName             = i.stadiumName;
-//            int     seatingCapacity         = i.seatingCapacity;
-//            QString location                = i.location;
-//            QString playingSurface          = i.playingSurface;
-//            QString league                  = i.league;
-//            int     dateOpened              = i.dateOpened;
-//            int     distanceToCenterFiled   = i.distanceToCenterFiled;
-//            QString ballParkTypology        = i.ballParkTypology;
-//            QString roofType                = i.roofType;
-//            //print all the data out in the console
+//        while(qry.next()){
+//            team.teamName               = qry.value(0).toString();
+//            team.stadiumName            = qry.value(1).toString();
+//            team.seatingCapacity        = qry.value(2).toInt();
+//            team.location               = qry.value(3).toString();
+//            team.playingSurface         = qry.value(4).toString();
+//            team.league                 = qry.value(5).toString();
+//            team.dateOpened             = qry.value(6).toInt();
+//            team.distanceToCenterFiled  = qry.value(7).toInt();
+//            team.ballParkTypology       = qry.value(8).toString();
+//            team.roofType               = qry.value(9).toString();
+//                //print all the data out in the console
 //        }
     }
     model->setQuery(qry);
