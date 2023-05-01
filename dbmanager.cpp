@@ -18,7 +18,7 @@ DBmanager::DBmanager()
 DBmanager::~DBmanager(){}
 
 
-// loads the team name only form the databse return in model so can only use for table widget or any widget.
+// loads the team name only form the databse return in model so can only use for table view or any view.
 QSqlQueryModel* DBmanager::loadTeamNameOnly(){
     QSqlQueryModel* model = new QSqlQueryModel();
 
@@ -35,7 +35,7 @@ QSqlQueryModel* DBmanager::loadTeamNameOnly(){
     return model;
 }
 
-// take in a selected team name and outputs all the information on that selected team, return in model so can only use a table widget or any widget
+// take in a selected team name and outputs all the information on that selected team, return in model so can only use a table view or any view
 QSqlQueryModel* DBmanager::loadTeamInfo(QString selectedTeamName){
     QSqlQueryModel* model = new QSqlQueryModel();
 
