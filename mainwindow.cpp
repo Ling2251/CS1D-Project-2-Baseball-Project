@@ -13,3 +13,31 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_loginButton_clicked()
+{
+   hide();
+   uiConnect.linkToLoginPage();
+}
+
+
+void MainWindow::on_displayButton_clicked()
+{
+    hide();
+    uiConnect.linkToDisplayPage();
+}
+
+
+void MainWindow::on_planTripButton_clicked()
+{
+    hide();
+    uiConnect.linkToPlanTripPage();
+}
+
+
+void MainWindow::on_differentDistanceButton_clicked()
+{
+    hide();
+    uiConnect.linkToDifferentDistance();
+}
+

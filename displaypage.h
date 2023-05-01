@@ -15,6 +15,11 @@ public:
     explicit DisplayPage(QWidget *parent = nullptr);
     ~DisplayPage();
 
+private slots:
+
+
+    void on_mainPagrButton_clicked();
+
 private:
     Ui::DisplayPage *ui;
 };
