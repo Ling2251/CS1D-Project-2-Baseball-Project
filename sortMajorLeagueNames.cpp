@@ -16,7 +16,7 @@ void bubbleSort(vector<team>& vec) {
   }
 }
 
-int main(){
+void sortMajorLeagueNames(){
 
 //vector of "team" class
 vector<team> teamVector;   
