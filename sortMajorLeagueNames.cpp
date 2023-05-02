@@ -41,5 +41,4 @@ bubbleSort(teamVector);
 //    cout << element.teamName << " "  << element.stadiumName << endl;
 // }
 
-return 0;
 }
