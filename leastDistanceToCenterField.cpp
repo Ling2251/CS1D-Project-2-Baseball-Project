@@ -1,7 +1,8 @@
 #include <vector>
 #include <string>
 #include <dbmanager.h>
-int main(){
+
+void leastDistanceToCenterField(){
   
   //vector of "team" class
   vector<team> teams;   
