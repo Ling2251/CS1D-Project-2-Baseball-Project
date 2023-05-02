@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
 #include <dbmanager.h>
-int main(){
+void greatestDistanceToCenter(){
 
   vector<team> teams;
 
