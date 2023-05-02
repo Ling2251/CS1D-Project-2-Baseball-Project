@@ -2,7 +2,6 @@
 #include <string>
 #include <dbmanager.h>
 
-using namespace std;
 
 //bubble sort by stadium name
 void bubbleSort(vector<team>& vec) {
@@ -16,7 +15,7 @@ void bubbleSort(vector<team>& vec) {
   }
 }
 
-int main(){
+void sortMajorLeagueStadiums(){
 
 //vector of "team" class
 vector<team> teamVector;
@@ -42,5 +41,4 @@ bubbleSort(teamVector);
 //    cout << element.stadiumName << " "  << element.teamName << endl;
 // }
 
-return 0;
 }
