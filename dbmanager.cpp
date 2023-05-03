@@ -43,7 +43,10 @@ QSqlQueryModel* DBmanager::loadTeamInfo(QString selectedTeamName){
     QSqlQuery qry;
     qry.prepare(sQry);
 
-    if(!qry.exec())
+    qry.exec();
+    qry.first();
+
+    if(!qry.isValid())
     {
         qDebug() << "\nError Loading baseball team name\n";
     }else{
