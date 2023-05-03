@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include"souveniredit.h"
+#include"intputdata.h"
+
 namespace Ui {
 class maintenancePage;
 }
@@ -19,6 +21,10 @@ private slots:
 
 
     void on_SouvenirButton_clicked();
+
+    void on_InputFileButton_clicked();
+
+    void on_mainPagrButton_clicked();
 
 private:
     Ui::maintenancePage *ui;

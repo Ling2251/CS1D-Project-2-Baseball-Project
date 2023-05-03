@@ -2,6 +2,9 @@
 #define DISPLAYPAGE_H
 
 #include <QDialog>
+#include <QAbstractTableModel>
+#include <QTableView>
+#include <QSortFilterProxyModel>
 #include "dbmanager.h"
 
 namespace Ui {

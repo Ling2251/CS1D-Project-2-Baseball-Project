@@ -44,6 +44,11 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
     // show the table view and hide the widget.
     ui->StadiumtableView->setModel(model);
     ui->StadiumtableWidget->hide();
+
+    //sort the table view
+    ui->StadiumtableView->setSortingEnabled(true);
+    ui->StadiumtableView->sortByColumn(1);
+
 }
 
 // displays only one team information, base on what team name user selected in the combo box

@@ -26,17 +26,39 @@
     <string>Souvenir Edits</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="InputFileButton">
    <property name="geometry">
     <rect>
      <x>310</x>
      <y>180</y>
-     <width>93</width>
-     <height>28</height>
+     <width>121</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Add New Data</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mainPagrButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>20</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Main Page</string>
    </property>
   </widget>
  </widget>
