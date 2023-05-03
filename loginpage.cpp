@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
+#include "mainwindow.h"
 
 loginPage::loginPage(QWidget *parent) :
     QDialog(parent),
@@ -43,5 +44,22 @@ void loginPage::on_pushButton_2_clicked()
 {
     ui->lineEdit_1->clear();
     ui->lineEdit_2->clear();
+}
+
+
+void loginPage::on_cancelButton_clicked()
+{
+    QList<QWidget*> topLevelWidgets = qApp->topLevelWidgets();
+    foreach(QWidget *widget, topLevelWidgets) {
+       QMainWindow *mainWindow = qobject_cast<QMainWindow*>(widget);
+       if (mainWindow) {
+           // Show the main window if it was previously hidden
+           if (!mainWindow->isVisible()) {
+               mainWindow->show();
+           }
+           break;
+       }
+    }
+    hide();
 }
 
