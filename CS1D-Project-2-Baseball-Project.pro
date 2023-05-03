@@ -1,5 +1,4 @@
 QT       += core gui
-QT       += axcontainer
 QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -14,7 +13,6 @@ SOURCES += \
     dbmanager.cpp \
     differentdistance.cpp \
     displaypage.cpp \
-    intputdata.cpp \
     loginpage.cpp \
     main.cpp \
     maintenancepage.cpp \
@@ -29,7 +27,6 @@ HEADERS += \
     dbmanager.h \
     differentdistance.h \
     displaypage.h \
-    intputdata.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
@@ -41,7 +38,6 @@ HEADERS += \
 FORMS += \
     differentdistance.ui \
     displaypage.ui \
-    intputdata.ui \
     loginpage.ui \
     maintenancepage.ui \
     mainwindow.ui \
