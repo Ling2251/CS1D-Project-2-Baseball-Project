@@ -19,6 +19,7 @@ public:
 
     void teamNameComboBox();
 
+    bool isNumber(const QString& text);
 
 private slots:
     void on_comboxEnterButton_clicked();

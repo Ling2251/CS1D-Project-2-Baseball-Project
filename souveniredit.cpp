@@ -97,13 +97,15 @@ void souvenirEdit::on_souvenirUpdateButton_clicked()
     souvenirs = ui->souvenirNameLine->text();
     cost = ui->costLine->text();
 
+    bool result = isNumber(cost);
+
     //open the database
     conn.open();
 
     //update function to update the cost
-    if(cost == "ABC")
+    if(!result)
     {
-        QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
+        QMessageBox::critical(this,tr("Error::"),tr("Wrong!!!! Please type the numeric value"));
     }
     else
     {
@@ -117,7 +119,7 @@ void souvenirEdit::on_souvenirUpdateButton_clicked()
     }
     else
     {
-        QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
+        //QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
     }
 }
 
@@ -171,35 +173,43 @@ void souvenirEdit::on_addButton_clicked()
     souvenirName  = ui->souvenirNameLine->text();
     price = ui->costLine->text();
 
+    bool result = isNumber(price);
 
-    // error checking input
-    if(teamName != "" && price != "" && souvenirName != ""){
-        addOrDelet = true;
-    }
-    else{
-        addOrDelet = false;
-    }
-
-    if(addOrDelet){
-        // add the item
-        qry.prepare("insert into stadium_Souvenirs (stadiumName, itemName, price) values ('"+teamName+"', '"+souvenirName+"', '"+price+"')");
-
-        // error message if the item can't be added due to the data base
-        if(qry.exec())
-        {
-            QMessageBox::about(this, "", "The item was added, double check if error occured");
-            // close the connection to data base
-            conn.close();
+    if(result)
+    {
+        // error checking input
+        if(teamName != "" && price != "" && souvenirName != ""){
+            addOrDelet = true;
         }
-        else
-        {
-            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        else{
+            addOrDelet = false;
         }
+
+        if(addOrDelet){
+            // add the item
+            qry.prepare("insert into stadium_Souvenirs (stadiumName, itemName, price) values ('"+teamName+"', '"+souvenirName+"', '"+price+"')");
+
+            // error message if the item can't be added due to the data base
+            if(qry.exec())
+            {
+                QMessageBox::about(this, "", "The item was added, double check if error occured");
+                // close the connection to data base
+                conn.close();
+            }
+            else
+            {
+                QMessageBox::about(this, "Error", "Database not found double check path to database");
+            }
+        }
+        else{
+            QMessageBox::about(this, "Error", "Can't enter an empty input to add an item, please try agin");
+            //ClearSreen();
+        }
+    }else
+    {
+        QMessageBox::critical(this,tr("Error::"),tr("Wrong!!!! Please type the numeric value"));
     }
-    else{
-        QMessageBox::about(this, "Error", "Can't enter an empty input to add an item, please try agin");
-        //ClearSreen();
-    }
+
 }
 
 
@@ -256,4 +266,12 @@ void souvenirEdit::on_pushButton_clicked()
     maintenance.setModal(true);
     maintenance.exec();
 }
+
+bool souvenirEdit::isNumber(const QString& text)
+{
+    QRegularExpression regex("^[0-9]+(\\.[0-9]+)?$"); // pattern to match numbers with or without decimal points
+    QRegularExpressionMatch match = regex.match(text);
+    return match.hasMatch();
+}
+
 
