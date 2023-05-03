@@ -2,7 +2,7 @@
 #define MAINTENANCEPAGE_H
 
 #include <QDialog>
-
+#include"souveniredit.h"
 namespace Ui {
 class maintenancePage;
 }
@@ -14,6 +14,11 @@ class maintenancePage : public QDialog
 public:
     explicit maintenancePage(QWidget *parent = nullptr);
     ~maintenancePage();
+
+private slots:
+
+
+    void on_SouvenirButton_clicked();
 
 private:
     Ui::maintenancePage *ui;
