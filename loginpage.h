@@ -7,6 +7,7 @@
 #include <QString>
 #include <QMessageBox>
 #include "maintenancepage.h"
+#include"dbmanager.h"
 using namespace std;
 
 

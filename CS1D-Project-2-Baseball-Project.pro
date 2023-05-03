@@ -20,6 +20,7 @@ SOURCES += \
     mainwindow.cpp \
     planntingtrip.cpp \
     receiptpage.cpp \
+    souveniredit.cpp \
     souvenirshop.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     mainwindow.h \
     planntingtrip.h \
     receiptpage.h \
+    souveniredit.h \
     souvenirshop.h
 
 FORMS += \
@@ -42,6 +44,7 @@ FORMS += \
     mainwindow.ui \
     planntingtrip.ui \
     receiptpage.ui \
+    souveniredit.ui \
     souvenirshop.ui
 
 # Default rules for deployment.
