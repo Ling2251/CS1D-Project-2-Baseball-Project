@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QFileDialog>
 #include <QTextStream>
-//#include <QAxObject>
+#include <QAxObject>
 
 namespace Ui {
 class intputData;
