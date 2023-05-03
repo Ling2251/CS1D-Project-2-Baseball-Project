@@ -31,6 +31,9 @@ public:
 
     QSqlQueryModel* loadTeamNameOnly();
     QSqlQueryModel* loadTeamInfo(QString selectedTeamName);
+    QSqlQueryModel* loadAllTeam();
+    QSqlQueryModel* loadMajorLeagueTeam();
+    QSqlQueryModel* loadAmericanLeagueTeam();
 private:
 
 };

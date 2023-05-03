@@ -68,3 +68,56 @@ QSqlQueryModel* DBmanager::loadTeamInfo(QString selectedTeamName){
     return model;
 }
 
+// loads the all the team form the databse return in model so can only use for table view or any view.
+QSqlQueryModel* DBmanager::loadAllTeam(){
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+    QString sQry = "select * from stadium_info;";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading baseball team name\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+// loads the all the team form the databse return in model so can only use for table view or any view.
+QSqlQueryModel* DBmanager::loadMajorLeagueTeam(){
+    QSqlQueryModel* model = new QSqlQueryModel();
+    QString leagueName = "National";
+
+    QString sQry = "select teamName, stadiumName from stadium_info where league = '" +leagueName+ "'";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading baseball team name\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+// loads the all the team form the databse return in model so can only use for table view or any view.
+QSqlQueryModel* DBmanager::loadAmericanLeagueTeam(){
+    QSqlQueryModel* model = new QSqlQueryModel();
+    QString leagueName = "American";
+
+    QString sQry = "select teamName, stadiumName from stadium_info where league = '" +leagueName+ "'";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading baseball team name\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+

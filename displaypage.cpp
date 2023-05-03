@@ -54,3 +54,21 @@ void DisplayPage::on_displayTeamInfo_clicked()
 
 }
 
+
+void DisplayPage::on_allTeamDisplay_clicked()
+{
+    showTeamInfoDisplay(my_database.loadAllTeam());
+}
+
+
+void DisplayPage::on_majorLeagueDisplay_clicked()
+{
+    showTeamInfoDisplay(my_database.loadMajorLeagueTeam());
+}
+
+
+void DisplayPage::on_AmericanTeamDisplay_clicked()
+{
+    showTeamInfoDisplay(my_database.loadAmericanLeagueTeam());
+}
+

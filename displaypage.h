@@ -22,6 +22,12 @@ private slots:
 
     void on_displayTeamInfo_clicked();
 
+    void on_allTeamDisplay_clicked();
+
+    void on_majorLeagueDisplay_clicked();
+
+    void on_AmericanTeamDisplay_clicked();
+
 private:
     Ui::DisplayPage *ui;
     DBmanager my_database;
