@@ -17,8 +17,26 @@ public:
     explicit souvenirEdit(QWidget *parent = nullptr);
     ~souvenirEdit();
 
+    void teamNameComboBox();
+
+
+private slots:
+    void on_comboxEnterButton_clicked();
+
+    void on_souvenirUpdateButton_clicked();
+
+    void on_souvenirTableView_activated(const QModelIndex &index);
+
+    void on_addButton_clicked();
+
+    void on_deleteButton_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::souvenirEdit *ui;
+
+    bool addOrDelet;
 };
 
 #endif // SOUVENIREDIT_H
