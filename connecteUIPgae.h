@@ -6,6 +6,10 @@
 #include "dbmanager.h"
 #include "maintenancepage.h"
 #include "differentdistance.h"
+#include "souveniredit.h"
+#include "intputdata.h"
+#include "souvenirshop.h"
+#include "receiptpage.h"
 
 // This class is mainy for connected all the UIs
 class ConnecteUIPage{
