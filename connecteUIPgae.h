@@ -7,7 +7,7 @@
 #include "maintenancepage.h"
 #include "differentdistance.h"
 #include "souveniredit.h"
-#include "intputdata.h"
+//#include "intputdata.h"
 #include "souvenirshop.h"
 #include "receiptpage.h"
 
