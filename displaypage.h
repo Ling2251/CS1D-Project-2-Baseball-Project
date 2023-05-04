@@ -3,8 +3,9 @@
 
 #include <QDialog>
 #include <QAbstractTableModel>
-#include <QTableView>
 #include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QTableView>
 #include "dbmanager.h"
 
 namespace Ui {
@@ -30,6 +31,10 @@ private slots:
     void on_majorLeagueDisplay_clicked();
 
     void on_AmericanTeamDisplay_clicked();
+
+    void on_smallestDistance_clicked();
+
+    void on_greatestDistance_clicked();
 
 private:
     Ui::DisplayPage *ui;

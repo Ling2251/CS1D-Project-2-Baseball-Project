@@ -41,13 +41,15 @@ void DisplayPage::showTeamNameCombo(QSqlQueryModel *model){
 
 // the UI that display the information , this is useing table view not table widget
 void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
-    // show the table view and hide the widget.
-    ui->StadiumtableView->setModel(model);
-    ui->StadiumtableWidget->hide();
+    // show the table view and sort the data
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel;
+    proxyModel->setSourceModel(model);
+    ui->StadiumtableView->setModel(proxyModel);
 
-    //sort the table view
+    //resize the columns and sorted the data in the table view
+    ui->StadiumtableView->resizeColumnsToContents();
     ui->StadiumtableView->setSortingEnabled(true);
-    ui->StadiumtableView->sortByColumn(1);
+    proxyModel->sort(1, Qt::AscendingOrder);
 
 }
 
@@ -59,21 +61,28 @@ void DisplayPage::on_displayTeamInfo_clicked()
 
 }
 
-
 void DisplayPage::on_allTeamDisplay_clicked()
 {
     showTeamInfoDisplay(my_database.loadAllTeam());
 }
-
 
 void DisplayPage::on_majorLeagueDisplay_clicked()
 {
     showTeamInfoDisplay(my_database.loadMajorLeagueTeam());
 }
 
-
 void DisplayPage::on_AmericanTeamDisplay_clicked()
 {
     showTeamInfoDisplay(my_database.loadAmericanLeagueTeam());
+}
+
+void DisplayPage::on_smallestDistance_clicked()
+{
+    showTeamInfoDisplay(my_database.loadSmallCenterDistanceTeam());
+}
+
+void DisplayPage::on_greatestDistance_clicked()
+{
+    showTeamInfoDisplay(my_database.loadGreatesCenterDistanceTeam());
 }
 
