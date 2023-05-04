@@ -61,7 +61,6 @@ QSqlQueryModel* DBmanager::loadTeamInfo(QString selectedTeamName){
 //            team.distanceToCenterFiled  = qry.value(7).toInt();
 //            team.ballParkTypology       = qry.value(8).toString();
 //            team.roofType               = qry.value(9).toString();
-//                //print all the data out in the console
 //        }
     }
     model->setQuery(qry);
@@ -78,7 +77,7 @@ QSqlQueryModel* DBmanager::loadAllTeam(){
 
     if(!qry.exec())
     {
-        qDebug() << "\nError Loading baseball team name\n";
+        qDebug() << "\nError Loading baseball team informations\n";
     }
 
     model->setQuery(qry);
@@ -96,7 +95,7 @@ QSqlQueryModel* DBmanager::loadMajorLeagueTeam(){
 
     if(!qry.exec())
     {
-        qDebug() << "\nError Loading baseball team name\n";
+        qDebug() << "\nError Loading National League team info\n";
     }
 
     model->setQuery(qry);
@@ -114,7 +113,41 @@ QSqlQueryModel* DBmanager::loadAmericanLeagueTeam(){
 
     if(!qry.exec())
     {
-        qDebug() << "\nError Loading baseball team name\n";
+        qDebug() << "\nError Loading American League team info\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+// loads the team form the databse that hase the smallest center distance return in model so can only use for table view or any view.
+QSqlQueryModel* DBmanager::loadSmallCenterDistanceTeam(){
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+    QString sQry = "SELECT teamName, stadiumName, distanceToCenterFileld FROM stadium_info WHERE distanceToCenterFileld = (SELECT MIN(distanceToCenterFileld) FROM stadium_info)";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading the team form the databse that hase the smallest center distance\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+// loads the team form the databse that hase the grest center distance return in model so can only use for table view or any view.
+QSqlQueryModel* DBmanager::loadGreatesCenterDistanceTeam(){
+    QSqlQueryModel* model = new QSqlQueryModel();
+
+    QString sQry = "SELECT teamName, stadiumName, distanceToCenterFileld FROM stadium_info WHERE distanceToCenterFileld = (SELECT MAX(distanceToCenterFileld) FROM stadium_info)";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading the team form the databse that hase the smallest center distance\n";
     }
 
     model->setQuery(qry);

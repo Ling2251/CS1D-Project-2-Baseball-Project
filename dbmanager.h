@@ -34,6 +34,10 @@ public:
     QSqlQueryModel* loadAllTeam();
     QSqlQueryModel* loadMajorLeagueTeam();
     QSqlQueryModel* loadAmericanLeagueTeam();
+    QSqlQueryModel* loadSmallCenterDistanceTeam();
+    QSqlQueryModel* loadGreatesCenterDistanceTeam();
+
+    stadiumInfo team;
 private:
 
 };
