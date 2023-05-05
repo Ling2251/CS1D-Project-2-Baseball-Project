@@ -45,15 +45,17 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
     proxyModel->setSourceModel(model);
     ui->StadiumtableView->setModel(proxyModel);
 
-    //resize the columns and sorted the data in the table view
+    //resize the columns and rows
     ui->StadiumtableView->resizeColumnsToContents();
+    ui->StadiumtableView->resizeRowsToContents();
+
+    //sorted the data in the table view
     ui->StadiumtableView->setSortingEnabled(true);
     proxyModel->sort(0, Qt::AscendingOrder);
 
     // load the total seating capacity into the UI
     int totalSeatingCapacity = my_database.getseatingCapacity();
     ui->numberSeatingCapacity->setNum(totalSeatingCapacity);
-
 }
 
 // displays only one team information, base on what team name user selected in the combo box
