@@ -57,32 +57,45 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
 void DisplayPage::on_displayTeamInfo_clicked()
 {
     QString name = ui->TeamComboBox->currentText();
+    ui->SortedLabel->setText("All Information Of Team " + name);
     showTeamInfoDisplay(my_database.loadTeamInfo(name));
-
 }
 
 void DisplayPage::on_allTeamDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The Teams Information");
     showTeamInfoDisplay(my_database.loadAllTeam());
 }
 
 void DisplayPage::on_majorLeagueDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The National League Teams Information");
     showTeamInfoDisplay(my_database.loadMajorLeagueTeam());
 }
 
 void DisplayPage::on_AmericanTeamDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The American League Teams Information");
     showTeamInfoDisplay(my_database.loadAmericanLeagueTeam());
 }
 
-void DisplayPage::on_smallestDistance_clicked()
+void DisplayPage::on_greatestDistanceDisplay_clicked()
 {
+    ui->SortedLabel->setText("The Team(s) That Has The Grest Center Distance");
+    showTeamInfoDisplay(my_database.loadGreatesCenterDistanceTeam());
+}
+
+
+void DisplayPage::on_smallestDistanceDisplay_clicked()
+{
+    ui->SortedLabel->setText("The Team(s) That Has The Smallest Center Distance");
     showTeamInfoDisplay(my_database.loadSmallCenterDistanceTeam());
 }
 
-void DisplayPage::on_greatestDistance_clicked()
+
+void DisplayPage::on_roofTypeDisplay_clicked()
 {
-    showTeamInfoDisplay(my_database.loadGreatesCenterDistanceTeam());
+    ui->SortedLabel->setText("The Team(s) That Has An Opened Roof Type");
+    showTeamInfoDisplay(my_database.loadOpenRoofTypeTeam());
 }
 
