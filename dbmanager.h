@@ -36,6 +36,8 @@ public:
     QSqlQueryModel* loadAmericanLeagueTeam();
     QSqlQueryModel* loadSmallCenterDistanceTeam();
     QSqlQueryModel* loadGreatesCenterDistanceTeam();
+    QSqlQueryModel* loadOpenRoofTypeTeam();
+    int getseatingCapacity();
 
     stadiumInfo team;
 private:

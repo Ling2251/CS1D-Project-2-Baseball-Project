@@ -9,7 +9,6 @@ DisplayPage::DisplayPage(QWidget *parent) :
     ui->setupUi(this);
     // load team name in to the combo box
     showTeamNameCombo(my_database.loadTeamNameOnly());
-    // load the data into the UI
 
 }
 
@@ -49,7 +48,11 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
     //resize the columns and sorted the data in the table view
     ui->StadiumtableView->resizeColumnsToContents();
     ui->StadiumtableView->setSortingEnabled(true);
-    proxyModel->sort(1, Qt::AscendingOrder);
+    proxyModel->sort(0, Qt::AscendingOrder);
+
+    // load the total seating capacity into the UI
+    int totalSeatingCapacity = my_database.getseatingCapacity();
+    ui->numberSeatingCapacity->setNum(totalSeatingCapacity);
 
 }
 
@@ -57,32 +60,49 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
 void DisplayPage::on_displayTeamInfo_clicked()
 {
     QString name = ui->TeamComboBox->currentText();
+    ui->SortedLabel->setText("All Information Of Team " + name);
     showTeamInfoDisplay(my_database.loadTeamInfo(name));
-
 }
 
 void DisplayPage::on_allTeamDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The Teams Information");
     showTeamInfoDisplay(my_database.loadAllTeam());
 }
 
 void DisplayPage::on_majorLeagueDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The National League Teams Information");
     showTeamInfoDisplay(my_database.loadMajorLeagueTeam());
 }
 
 void DisplayPage::on_AmericanTeamDisplay_clicked()
 {
+    ui->SortedLabel->setText("All The American League Teams Information");
     showTeamInfoDisplay(my_database.loadAmericanLeagueTeam());
 }
 
-void DisplayPage::on_smallestDistance_clicked()
+void DisplayPage::on_greatestDistanceDisplay_clicked()
 {
+    ui->SortedLabel->setText("The Team(s) That Has The Grest Center Distance");
+    showTeamInfoDisplay(my_database.loadGreatesCenterDistanceTeam());
+}
+
+
+void DisplayPage::on_smallestDistanceDisplay_clicked()
+{
+    ui->SortedLabel->setText("The Team(s) That Has The Smallest Center Distance");
     showTeamInfoDisplay(my_database.loadSmallCenterDistanceTeam());
 }
 
-void DisplayPage::on_greatestDistance_clicked()
+
+void DisplayPage::on_roofTypeDisplay_clicked()
 {
-    showTeamInfoDisplay(my_database.loadGreatesCenterDistanceTeam());
+    ui->SortedLabel->setText("The Team(s) That Has An Opened Roof Type");
+    QSqlQueryModel* model = my_database.loadOpenRoofTypeTeam();
+    showTeamInfoDisplay(model);
+
+    int openedRoofNum = model->rowCount();
+    ui->numberOfOpenedRoof->setText(QString::number(openedRoofNum));
 }
 

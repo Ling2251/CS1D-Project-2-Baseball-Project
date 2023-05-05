@@ -32,9 +32,11 @@ private slots:
 
     void on_AmericanTeamDisplay_clicked();
 
-    void on_smallestDistance_clicked();
+    void on_greatestDistanceDisplay_clicked();
 
-    void on_greatestDistance_clicked();
+    void on_smallestDistanceDisplay_clicked();
+
+    void on_roofTypeDisplay_clicked();
 
 private:
     Ui::DisplayPage *ui;
