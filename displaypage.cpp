@@ -9,7 +9,6 @@ DisplayPage::DisplayPage(QWidget *parent) :
     ui->setupUi(this);
     // load team name in to the combo box
     showTeamNameCombo(my_database.loadTeamNameOnly());
-    // load the data into the UI
 
 }
 
@@ -49,7 +48,11 @@ void DisplayPage::showTeamInfoDisplay(QSqlQueryModel *model){
     //resize the columns and sorted the data in the table view
     ui->StadiumtableView->resizeColumnsToContents();
     ui->StadiumtableView->setSortingEnabled(true);
-    proxyModel->sort(1, Qt::AscendingOrder);
+    proxyModel->sort(0, Qt::AscendingOrder);
+
+    // load the total seating capacity into the UI
+    int totalSeatingCapacity = my_database.getseatingCapacity();
+    ui->numberSeatingCapacity->setNum(totalSeatingCapacity);
 
 }
 
@@ -96,6 +99,10 @@ void DisplayPage::on_smallestDistanceDisplay_clicked()
 void DisplayPage::on_roofTypeDisplay_clicked()
 {
     ui->SortedLabel->setText("The Team(s) That Has An Opened Roof Type");
-    showTeamInfoDisplay(my_database.loadOpenRoofTypeTeam());
+    QSqlQueryModel* model = my_database.loadOpenRoofTypeTeam();
+    showTeamInfoDisplay(model);
+
+    int openedRoofNum = model->rowCount();
+    ui->numberOfOpenedRoof->setText(QString::number(openedRoofNum));
 }
 

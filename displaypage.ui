@@ -272,10 +272,10 @@
   <widget class="QLabel" name="numberOfOpenedRoof">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>50</x>
      <y>560</y>
-     <width>201</width>
-     <height>31</height>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -294,10 +294,10 @@
   <widget class="QLabel" name="numberSeatingCapacity">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>40</x>
      <y>630</y>
-     <width>201</width>
-     <height>31</height>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">

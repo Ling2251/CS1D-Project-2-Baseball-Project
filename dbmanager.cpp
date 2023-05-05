@@ -62,10 +62,10 @@ QSqlQueryModel* DBmanager::loadAllTeam(){
     QSqlQuery qry;
     qry.prepare(sQry);
 
-    if(qry.exec())
+    if(!qry.exec())
     {
         qDebug() << "\nError Loading baseball team informations\n";
-    }else{
+    }
 //        while(qry.next()){
 //            team.teamName               = qry.value(0).toString();
 //            team.stadiumName            = qry.value(1).toString();
@@ -78,8 +78,6 @@ QSqlQueryModel* DBmanager::loadAllTeam(){
 //            team.ballParkTypology       = qry.value(8).toString();
 //            team.roofType               = qry.value(9).toString();
 //        }
-    }
-
     model->setQuery(qry);
     return model;
 }
@@ -172,7 +170,27 @@ QSqlQueryModel* DBmanager::loadOpenRoofTypeTeam(){
     return model;
 }
 
-int DBmanager::getseatingCapacity(){
+int DBmanager::getseatingCapacity()
+{
+    int totalSeatingCapacity = 0;
 
+    QString sQry = "SELECT SUM(seatingCapacity) FROM stadium_info";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if (!qry.exec()) {
+        qWarning() << "Query failed:" << qry.lastError().text();
+        return 0;
+    }
+
+    if (qry.next()) {
+        totalSeatingCapacity = qry.value(0).toInt();
+    } else {
+        qWarning() << "No result returned from query";
+        return 0;
+    }
+
+    return totalSeatingCapacity;
 }
+
 
