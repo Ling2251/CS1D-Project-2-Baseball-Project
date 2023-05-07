@@ -5,6 +5,8 @@
 #include"loginpage.h"
 #include"souveniredit.h"
 #include"dbmanager.h"
+#include<qstandarditemmodel>
+#include<QModelIndex>
 
 namespace Ui {
 class stadiumEdit;
@@ -29,6 +31,8 @@ private slots:
 
 
     void on_maintainancePushButton_clicked();
+
+    void on_teamInfotableView_activated(const QModelIndex &index);
 
 private:
     Ui::stadiumEdit *ui;

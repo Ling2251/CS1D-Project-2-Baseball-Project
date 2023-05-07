@@ -62,7 +62,62 @@ void stadiumEdit::on_enter_clicked()
 
 void stadiumEdit::on_update_clicked()
 {
+    //connect database
+    QSqlDatabase conn;
 
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    QSqlQuery* qry = new QSqlQuery(conn);
+
+    //create three string variables
+    QString stadiumName;
+    QString capacity;
+    QString playingSurface;
+    QString roofType;
+    QString ballparkTypology;
+    QString distanceToCenter;
+    QString location;
+    QString dateOpen;
+
+    QString teamName = ui->teamcomboBox->currentText();
+    //assign those variables with the current text
+    stadiumName = ui->stadiumName->text();
+    capacity = ui->capacity->text();
+    playingSurface = ui->playingSurface->text();
+    roofType = ui->rooftype->text();
+    ballparkTypology = ui->ballparktypology->text();
+    distanceToCenter = ui->distanceToCenter->text();
+    location = ui->Location->text();
+    dateOpen = ui->DateOpened->text();
+
+    QRegExp rx("-?\\d+(\\.\\d+)?([eE][-+]?\\d+)?");
+
+    bool isCapacityNumber = rx.exactMatch(capacity);
+    bool isDateOpenNumber = rx.exactMatch(dateOpen);
+    bool isDistanceTocenterNumber = rx.exactMatch(distanceToCenter);
+
+    //open the database
+    conn.open();
+
+    //update function to update the cost
+    if(!isCapacityNumber && !isDateOpenNumber && !isDistanceTocenterNumber)
+    {
+        QMessageBox::critical(this,tr("Error::"),tr("Wrong!!!! Please type the numeric value"));
+    }
+    else
+    {
+        qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity+"' and location='"+location+"' where teamName='"+teamName+"'");
+    }
+
+    //if update succesfully then will display a messageBox::Update
+    if(qry->exec())
+    {
+        QMessageBox::critical(this,tr("Edit"),tr("Updated"));
+    }
+    else
+    {
+        //QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
+    }
 }
 
 
@@ -94,6 +149,73 @@ void stadiumEdit::on_maintainancePushButton_clicked()
     hide();
     maintenance.setModal(true);
     maintenance.exec();
+
+}
+
+
+void stadiumEdit::on_teamInfotableView_activated(const QModelIndex &index)
+{
+    //Set val to tableView model
+    QString val = ui->teamInfotableView->model()->data(index).toString();
+
+    //connect database
+    QSqlDatabase conn;
+    QSqlQuery qry;
+
+    QString teamName = ui->teamcomboBox->currentText();
+    //select the souvenirName and cost that you want
+   /* qry.prepare("select * from stadium_info where teamName= '"+teamName+"'or stadiumName= '"+val+"'or seatingCapacity= '"+val+"'or location= '"+val+"'or playingSurface= '"+val+"'or league= '"+val+"'or dateOpened= '"+val+"'or distanceToCenterField= '"+val+"'or ballParkTypology= '"+val+"'or roofType= '"+val+"'");
+
+    //if qry.exec, it will assign the info in to collegeLine, souvenirsLine, and costLine
+    if(qry.exec())
+    {
+        while(qry.next())
+        {
+            ui->teamNameLine->setText(qry.value(1).toString());
+            ui->stadiumName->setText(qry.value(2).toString());
+            ui->capacity->setText(qry.value(3).toString());
+            ui->Location->setText(qry.value(4).toString());
+            ui->playingSurface->setText(qry.value(5).toString());
+            ui->leagueLine->setText(qry.value(6).toString());
+            ui->DateOpened->setText(qry.value(7).toString());
+            ui->distanceToCenter->setText(qry.value(8).toString());
+            ui->ballparktypology->setText(qry.value(9).toString());
+            ui->rooftype->setText(qry.value(10).toString());
+        }
+        //close the database
+        conn.close();
+    }
+    else
+    {
+        //else it will display the error
+        QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
+    }*/
+    QModelIndex index1 = ui->teamInfotableView->currentIndex();
+
+    // Get the data of the selected row
+    QStandardItemModel* model = dynamic_cast<QStandardItemModel*>(ui->teamInfotableView->model());
+    QString teamLine = model->data(model->index(index1.row(), 0)).toString();
+    QString stadiumNameline = model->data(model->index(index1.row(), 1)).toString();
+    QString capacityline = model->data(model->index(index1.row(), 2)).toString();
+    QString locationline = model->data(model->index(index1.row(), 3)).toString();
+    QString playingsurfaceline = model->data(model->index(index1.row(), 4)).toString();
+    QString league = model->data(model->index(index1.row(), 5)).toString();
+    QString dateopenedline = model->data(model->index(index1.row(), 6)).toString();
+    QString distance = model->data(model->index(index1.row(), 7)).toString();
+    QString ball = model->data(model->index(index1.row(), 8)).toString();
+    QString rooftypeline = model->data(model->index(index1.row(), 9)).toString();
+    // Set the data to the appropriate line edits
+    ui->teamNameLine->setText(teamLine);
+    ui->stadiumName->setText(stadiumNameline);
+    ui->capacity->setText(capacityline);
+    ui->Location->setText(locationline);
+    ui->playingSurface->setText(playingsurfaceline);
+    ui->leagueLine->setText(league);
+    ui->DateOpened->setText(dateopenedline);
+    ui->distanceToCenter->setText(distance);
+    ui->ballparktypology->setText(ball);
+    ui->rooftype->setText(rooftypeline);
+
 
 }
 
