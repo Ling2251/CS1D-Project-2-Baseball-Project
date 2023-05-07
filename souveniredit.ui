@@ -28,7 +28,7 @@
     <rect>
      <x>30</x>
      <y>20</y>
-     <width>241</width>
+     <width>271</width>
      <height>51</height>
     </rect>
    </property>
@@ -38,7 +38,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Souvenir House</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic; color:#aa00ff;&quot;&gt;Souvenir House&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="addButton">

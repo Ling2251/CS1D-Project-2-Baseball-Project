@@ -21,3 +21,12 @@ void maintenancePage::on_SouvenirButton_clicked()
     souvenirEdit.exec();
 }
 
+
+void maintenancePage::on_stadiumButton_clicked()
+{
+    stadiumEdit stadiumEdit;
+    hide();
+    stadiumEdit.setModal(true);
+    stadiumEdit.exec();
+}
+

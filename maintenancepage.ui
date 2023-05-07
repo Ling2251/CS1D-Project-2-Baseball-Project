@@ -26,17 +26,17 @@
     <string>Souvenir Edits</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="stadiumButton">
    <property name="geometry">
     <rect>
      <x>310</x>
      <y>180</y>
-     <width>93</width>
-     <height>28</height>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Stadium Edit</string>
    </property>
   </widget>
  </widget>
