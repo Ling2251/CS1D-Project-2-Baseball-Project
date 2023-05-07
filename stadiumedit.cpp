@@ -164,23 +164,23 @@ void stadiumEdit::on_teamInfotableView_activated(const QModelIndex &index)
 
     QString teamName = ui->teamcomboBox->currentText();
     //select the souvenirName and cost that you want
-   /* qry.prepare("select * from stadium_info where teamName= '"+teamName+"'or stadiumName= '"+val+"'or seatingCapacity= '"+val+"'or location= '"+val+"'or playingSurface= '"+val+"'or league= '"+val+"'or dateOpened= '"+val+"'or distanceToCenterField= '"+val+"'or ballParkTypology= '"+val+"'or roofType= '"+val+"'");
+   qry.prepare("select * from stadium_info where teamName= '"+teamName+"'or stadiumName= '"+val+"'");//or seatingCapacity= '"+val+"'or location= '"+val+"'or playingSurface= '"+val+"'or league= '"+val+"'or dateOpened= '"+val+"'or distanceToCenterField= '"+val+"'or ballParkTypology= '"+val+"'or roofType= '"+val+"'");
 
     //if qry.exec, it will assign the info in to collegeLine, souvenirsLine, and costLine
     if(qry.exec())
     {
         while(qry.next())
         {
-            ui->teamNameLine->setText(qry.value(1).toString());
-            ui->stadiumName->setText(qry.value(2).toString());
-            ui->capacity->setText(qry.value(3).toString());
-            ui->Location->setText(qry.value(4).toString());
-            ui->playingSurface->setText(qry.value(5).toString());
-            ui->leagueLine->setText(qry.value(6).toString());
-            ui->DateOpened->setText(qry.value(7).toString());
-            ui->distanceToCenter->setText(qry.value(8).toString());
-            ui->ballparktypology->setText(qry.value(9).toString());
-            ui->rooftype->setText(qry.value(10).toString());
+            ui->teamNameLine->setText(qry.value(0).toString());
+            ui->stadiumName->setText(qry.value(1).toString());
+            ui->capacity->setText(qry.value(2).toString());
+            ui->Location->setText(qry.value(3).toString());
+            ui->playingSurface->setText(qry.value(4).toString());
+            ui->leagueLine->setText(qry.value(5).toString());
+            ui->DateOpened->setText(qry.value(6).toString());
+            ui->distanceToCenter->setText(qry.value(7).toString());
+            ui->ballparktypology->setText(qry.value(8).toString());
+            ui->rooftype->setText(qry.value(9).toString());
         }
         //close the database
         conn.close();
@@ -189,33 +189,6 @@ void stadiumEdit::on_teamInfotableView_activated(const QModelIndex &index)
     {
         //else it will display the error
         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
-    }*/
-    QModelIndex index1 = ui->teamInfotableView->currentIndex();
-
-    // Get the data of the selected row
-    QStandardItemModel* model = dynamic_cast<QStandardItemModel*>(ui->teamInfotableView->model());
-    QString teamLine = model->data(model->index(index1.row(), 0)).toString();
-    QString stadiumNameline = model->data(model->index(index1.row(), 1)).toString();
-    QString capacityline = model->data(model->index(index1.row(), 2)).toString();
-    QString locationline = model->data(model->index(index1.row(), 3)).toString();
-    QString playingsurfaceline = model->data(model->index(index1.row(), 4)).toString();
-    QString league = model->data(model->index(index1.row(), 5)).toString();
-    QString dateopenedline = model->data(model->index(index1.row(), 6)).toString();
-    QString distance = model->data(model->index(index1.row(), 7)).toString();
-    QString ball = model->data(model->index(index1.row(), 8)).toString();
-    QString rooftypeline = model->data(model->index(index1.row(), 9)).toString();
-    // Set the data to the appropriate line edits
-    ui->teamNameLine->setText(teamLine);
-    ui->stadiumName->setText(stadiumNameline);
-    ui->capacity->setText(capacityline);
-    ui->Location->setText(locationline);
-    ui->playingSurface->setText(playingsurfaceline);
-    ui->leagueLine->setText(league);
-    ui->DateOpened->setText(dateopenedline);
-    ui->distanceToCenter->setText(distance);
-    ui->ballparktypology->setText(ball);
-    ui->rooftype->setText(rooftypeline);
-
-
+    }
 }
 
