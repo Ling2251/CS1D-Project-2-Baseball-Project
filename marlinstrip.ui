@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>495</width>
-    <height>330</height>
+    <height>401</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,6 +73,19 @@
    </property>
    <property name="text">
     <string>Choose another stadium</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>320</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Souvenir Shop</string>
    </property>
   </widget>
  </widget>
