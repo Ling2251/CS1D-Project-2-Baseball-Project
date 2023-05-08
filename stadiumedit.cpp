@@ -79,6 +79,8 @@ void stadiumEdit::on_update_clicked()
     QString location;
     QString dateOpen;
 
+    int capacity1 = capacity.toInt();
+
     QString teamName = ui->teamcomboBox->currentText();
     //assign those variables with the current text
     stadiumName = ui->stadiumName->text();
@@ -90,24 +92,64 @@ void stadiumEdit::on_update_clicked()
     location = ui->Location->text();
     dateOpen = ui->DateOpened->text();
 
-    QRegExp rx("-?\\d+(\\.\\d+)?([eE][-+]?\\d+)?");
+    /*QRegExp rx("-?\\d+(\\.\\d+)?([eE][-+]?\\d+)?");
 
     bool isCapacityNumber = rx.exactMatch(capacity);
     bool isDateOpenNumber = rx.exactMatch(dateOpen);
-    bool isDistanceTocenterNumber = rx.exactMatch(distanceToCenter);
+    bool isDistanceTocenterNumber = rx.exactMatch(distanceToCenter);*/
 
     //open the database
     conn.open();
 
     //update function to update the cost
-    if(!isCapacityNumber && !isDateOpenNumber && !isDistanceTocenterNumber)
+    /*if(!isCapacityNumber && !isDateOpenNumber && !isDistanceTocenterNumber)
     {
         QMessageBox::critical(this,tr("Error::"),tr("Wrong!!!! Please type the numeric value"));
     }
     else
     {
-        qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity+"' and location='"+location+"' where teamName='"+teamName+"'");
+        qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity+"' and playingSurface='"+playingSurface+"' and location='"+location+"' and dateOpened='"+dateOpen+"' and distanceToCenterField='"+distanceToCenter+"' and ballParkTypology= '"+ballparkTypology+"' and roofType='"+roofType+"' where teamName='"+teamName+"'");
+    }*/
+
+
+    //qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity+"' and playingSurface='"+playingSurface+"' and location='"+location+"' and dateOpened='"+dateOpen+"' and distanceToCenterField='"+distanceToCenter+"' and ballParkTypology= '"+ballparkTypology+"' and roofType='"+roofType+"' where teamName='"+teamName+"'");
+
+    /*if(!isCapacityNumber && !isDateOpenNumber && !isDistanceTocenterNumber)
+    {
+       QMessageBox::critical(this,tr("Error::"),tr("Wrong!!!! Please type the numeric value"));
     }
+    else
+    {
+        qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity+"' where teamName='"+teamName+"'");
+
+    }*/
+
+    qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity1+"' where teamName='"+teamName+"'");
+    //qry->prepare("update stadium_info set seatingCapacity='"+capacity+"' where teamName='"+teamName+"'");
+
+
+
+
+    /*
+    QSqlQuery query(conn);
+    query.prepare("UPDATE stadium_info SET stadiumName = :stadiumname, seatingCapacity = :capacity WHERE teamName = :teamname");
+
+    // Bind the values to the placeholders in the query
+    query.bindValue(":stadiumname", stadiumName);
+    query.bindValue(":seatingCapacity", capacity1);
+    query.bindValue(":teamname", teamName);
+
+
+
+    if (query.exec()) {
+        qDebug() << "Update successful";
+    } else {
+        qDebug() << "Update failed:" << query.lastError().text();
+    }*/
+
+
+
+
 
     //if update succesfully then will display a messageBox::Update
     if(qry->exec())
@@ -116,7 +158,7 @@ void stadiumEdit::on_update_clicked()
     }
     else
     {
-        //QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
+        QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
     }
 }
 
