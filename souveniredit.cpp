@@ -6,6 +6,7 @@ souvenirEdit::souvenirEdit(QWidget *parent) :
     ui(new Ui::souvenirEdit)
 {
     ui->setupUi(this);
+    setWindowTitle("Souvenir Home");
     teamNameComboBox();
 }
 

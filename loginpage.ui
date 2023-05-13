@@ -41,7 +41,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Cancel</string>
+    <string>Close</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -90,7 +90,11 @@
          <widget class="QLineEdit" name="lineEdit_1"/>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="lineEdit_2">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

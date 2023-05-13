@@ -6,6 +6,7 @@ stadiumEdit::stadiumEdit(QWidget *parent) :
     ui(new Ui::stadiumEdit)
 {
     ui->setupUi(this);
+    setWindowTitle("Stadium Home");
     teamCombox();
 
 }
@@ -92,12 +93,6 @@ void stadiumEdit::on_update_clicked()
     location = ui->Location->text();
     dateOpen = ui->DateOpened->text();
 
-    /*QRegExp rx("-?\\d+(\\.\\d+)?([eE][-+]?\\d+)?");
-
-    bool isCapacityNumber = rx.exactMatch(capacity);
-    bool isDateOpenNumber = rx.exactMatch(dateOpen);
-    bool isDistanceTocenterNumber = rx.exactMatch(distanceToCenter);*/
-
     //open the database
     conn.open();
 
@@ -126,29 +121,6 @@ void stadiumEdit::on_update_clicked()
 
     qry->prepare("update stadium_info set stadiumName='"+stadiumName+"' and seatingCapacity='"+capacity1+"' where teamName='"+teamName+"'");
     //qry->prepare("update stadium_info set seatingCapacity='"+capacity+"' where teamName='"+teamName+"'");
-
-
-
-
-    /*
-    QSqlQuery query(conn);
-    query.prepare("UPDATE stadium_info SET stadiumName = :stadiumname, seatingCapacity = :capacity WHERE teamName = :teamname");
-
-    // Bind the values to the placeholders in the query
-    query.bindValue(":stadiumname", stadiumName);
-    query.bindValue(":seatingCapacity", capacity1);
-    query.bindValue(":teamname", teamName);
-
-
-
-    if (query.exec()) {
-        qDebug() << "Update successful";
-    } else {
-        qDebug() << "Update failed:" << query.lastError().text();
-    }*/
-
-
-
 
 
     //if update succesfully then will display a messageBox::Update

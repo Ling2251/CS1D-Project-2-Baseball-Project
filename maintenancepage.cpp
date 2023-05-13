@@ -6,6 +6,7 @@ maintenancePage::maintenancePage(QWidget *parent) :
     ui(new Ui::maintenancePage)
 {
     ui->setupUi(this);
+    setWindowTitle("Mantenance Page");
 }
 
 maintenancePage::~maintenancePage()
