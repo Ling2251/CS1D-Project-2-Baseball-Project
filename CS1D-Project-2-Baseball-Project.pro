@@ -15,6 +15,7 @@ SOURCES += \
     differentdistance.cpp \
     displaypage.cpp \
     dodgerstadiumtrip.cpp \
+    intputdata.cpp \
     loginpage.cpp \
     main.cpp \
     maintenancepage.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     differentdistance.h \
     displaypage.h \
     dodgerstadiumtrip.h \
+    intputdata.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
@@ -48,6 +50,7 @@ FORMS += \
     differentdistance.ui \
     displaypage.ui \
     dodgerstadiumtrip.ui \
+    intputdata.ui \
     loginpage.ui \
     maintenancepage.ui \
     mainwindow.ui \

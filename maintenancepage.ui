@@ -29,8 +29,8 @@
   <widget class="QPushButton" name="InputFileButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>180</y>
+     <x>160</x>
+     <y>280</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -44,6 +44,28 @@
     <rect>
      <x>480</x>
      <y>20</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Main Page</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mainPagrButton_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
      <width>101</width>
      <height>41</height>
     </rect>

@@ -47,3 +47,9 @@ void maintenancePage::on_SouvenirButton_clicked()
 //    intputData.exec();
 //}
 
+
+void maintenancePage::on_InputFileButton_clicked()
+{
+
+}
+
