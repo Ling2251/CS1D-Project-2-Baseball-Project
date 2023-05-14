@@ -13,19 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>250</y>
-     <width>191</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Previous Stadium</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -43,13 +30,13 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>250</y>
+     <y>260</y>
      <width>191</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Choose another stadium</string>
+    <string>Choose a stadium</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -78,14 +65,24 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>340</y>
+     <x>30</x>
+     <y>260</y>
      <width>171</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string>View Souvenir Shop</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="stadiumComboBox">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>320</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
    </property>
   </widget>
  </widget>

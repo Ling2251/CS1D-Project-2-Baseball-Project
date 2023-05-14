@@ -10,6 +10,8 @@
 #include"ui_shortcustomtrip.h"
 #include "mainwindow.h"
 #include<QVBoxLayout>
+#include<QInputDialog>
+#include<QStandardItemModel>
 
 PlanntingTrip::PlanntingTrip(QWidget *parent) :
     QDialog(parent),
@@ -74,12 +76,58 @@ void PlanntingTrip::on_mainPagrButton_2_clicked()
 {
     //show window for dodger stadium trip
     // Create a new instance of the trip window
-        dodgerstadiumtrip *tripWindow = new dodgerstadiumtrip(this);
+    dodgerstadiumtrip *tripWindow = new dodgerstadiumtrip(this);
 
-        // Show the trip window
-        tripWindow->show();
+    // Show the trip window
+    tripWindow->show();
+     //QComboBox *comboBox = ui->stadiumComboBox;
+    //ask user to input the other team they want to visit from dodger stadium
+//    int selectedCampus = QInputDialog::getInt(this, tr("Team you want to visit starting Dodger Stadium"), "Choose the Stadium: ");
+//    qDebug() << selectedCampus;
 
-    //connect(ui->planButton, SIGNAL(clicked()), this, SLOT(show_trip_window()));
+//    //putting the stadiums in a vector starting from Dodger Stadium
+//    QVector<QString> stadiumNames {"Dodger Stadium",
+//                                   "Oracle Park",
+//                                   "Oakland-Alameda County Coliseum",
+//                                   "Angel Stadium of Anaheim",
+//                                   "Petco Park",
+//                                   "Chase Field",
+//                                   "Safeco Field",
+//                                   "Coors Field",
+//                                   "Globe Life Park in Arlington",
+//                                   "Minute Maid Park",
+//                                   "Target Field",
+//                                   "Kauffman Stadium",
+//                                   "Busch Stadium",
+//                                   "Miller Park",
+//                                   "Wrigley Field",
+//                                   "Guaranteed Rate Field",
+//                                   "Comerica Park",
+//                                   "Progressive Field",
+//                                   "Great American Ball Park",
+//                                   "Sun Trust Park",
+//                                   "Sun Trust Park",
+//                                   "Tropicana Field",
+//                                   "Marlins Park",
+//                                   "Rogers Centre",
+//                                   "PNC Park",
+//                                   "Yankee Stadium",
+//                                   "Citizens Bank",
+//                                   "Oriole Park at Camden Yard",
+//                                   "Nationals Park",
+//                                   "Fenway Park",
+//                                   "Citi Field",
+//                                   "Citizens Bank Park"
+//                                  };
+//    QStandardItemModel *model = new QStandardItemModel(this);
+//    model->setRowCount(stadiumNames.size());
+//    model->setColumnCount(1);
+//    for(int i = 0; i < stadiumNames.size(); i++)
+//    {
+//        QStandardItem *item = new QStandardItem(stadiumNames[i]);
+//        model->setItem(i, 0, item);
+//    }
+    //ui->mainPagrButton_2->findChild->tableView->setModel(model);
 }
 
 
