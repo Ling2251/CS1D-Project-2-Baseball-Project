@@ -24,11 +24,7 @@ private slots:
 
     void on_stadiumButton_clicked();
 
-//    void on_InputFileButton_clicked();
-
     void on_mainPagrButton_clicked();
-
-    void on_InputFileButton_clicked();
 
 private:
     Ui::maintenancePage *ui;

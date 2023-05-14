@@ -49,10 +49,6 @@ void maintenancePage::on_SouvenirButton_clicked()
 //}
 
 
-void maintenancePage::on_InputFileButton_clicked()
-{
-}
-
 void maintenancePage::on_stadiumButton_clicked()
 {
     stadiumEdit stadiumEdit;
