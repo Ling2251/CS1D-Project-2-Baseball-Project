@@ -7,6 +7,7 @@ loginPage::loginPage(QWidget *parent) :
     ui(new Ui::loginPage)
 {
     ui->setupUi(this);
+    setWindowTitle("Login Page");
 }
 
 loginPage::~loginPage()

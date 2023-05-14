@@ -25,7 +25,8 @@ SOURCES += \
     receiptpage.cpp \
     souveniredit.cpp \
     shortcustomtrip.cpp \
-    souvenirshop.cpp
+    souvenirshop.cpp \
+    stadiumedit.cpp
 
 HEADERS += \
     connecteUIPgae.h \
@@ -44,6 +45,8 @@ HEADERS += \
     souveniredit.h \
     shortcustomtrip.h \
     souvenirshop.h
+    stadiumedit.h
+
 
 FORMS += \
     customtrip.ui \
@@ -59,7 +62,8 @@ FORMS += \
     receiptpage.ui \
     souveniredit.ui \
     shortcustomtrip.ui \
-    souvenirshop.ui
+    souvenirshop.ui \
+    stadiumedit.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

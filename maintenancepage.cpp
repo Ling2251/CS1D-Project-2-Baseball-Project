@@ -7,6 +7,7 @@ maintenancePage::maintenancePage(QWidget *parent) :
     ui(new Ui::maintenancePage)
 {
     ui->setupUi(this);
+    setWindowTitle("Mantenance Page");
 }
 
 maintenancePage::~maintenancePage()
@@ -50,6 +51,13 @@ void maintenancePage::on_SouvenirButton_clicked()
 
 void maintenancePage::on_InputFileButton_clicked()
 {
+}
 
+void maintenancePage::on_stadiumButton_clicked()
+{
+    stadiumEdit stadiumEdit;
+    hide();
+    stadiumEdit.setModal(true);
+    stadiumEdit.exec();
 }
 
