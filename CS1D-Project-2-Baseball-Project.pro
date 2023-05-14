@@ -44,7 +44,7 @@ HEADERS += \
     receiptpage.h \
     souveniredit.h \
     shortcustomtrip.h \
-    souvenirshop.h
+    souvenirshop.h \
     stadiumedit.h
 
 
