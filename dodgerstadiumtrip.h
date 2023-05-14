@@ -7,6 +7,8 @@
 #include <QtCore/QVector>
 #include <QtCore/QDebug>
 #include <QDialog>
+#include<QComboBox>
+#include<QVBoxLayout>
 #include<iostream>
 
 typedef QMap<QString, QMap<QString, double>> Graph;
@@ -107,6 +109,22 @@ void displayDijkstra()
     //return a.exec();
 }
 
+//comboBox is not being added
+void showDialog()
+{
+    QDialog dialog;
+    QComboBox *comboBox = new QComboBox();
+    comboBox->addItem("Dodger Stadium");
+    comboBox->addItem("Angel Stadium");
+    comboBox->addItem("Petco Park");
+    comboBox->addItem("Fenway Park");
+
+    QVBoxLayout *layout = new QVBoxLayout();
+    layout->addWidget(comboBox);
+    dialog.setLayout(layout);
+    dialog.exec();
+}
+
 private slots:
     //void on_tableView_activated(const QModelIndex &index);
 
@@ -117,7 +135,7 @@ private slots:
 //funciton below having trouble with
     //void on_tableView_clicked();
 
-    void on_stadiumComboBox_activated(int index);
+   // void on_stadiumComboBox_activated(int index);
 
 private:
     Ui::dodgerstadiumtrip *ui;
