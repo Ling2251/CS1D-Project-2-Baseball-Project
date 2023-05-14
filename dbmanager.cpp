@@ -3,7 +3,7 @@
 DBmanager::DBmanager()
 {
     QSqlDatabase m_database = QSqlDatabase::addDatabase("QSQLITE");
-    m_database.setDatabaseName("../Baseball_Database.db");
+    m_database.setDatabaseName("../CS1D-Project-2-Baseball-Project/Baseball_Database.db");
 
     if(m_database.open())
     {
@@ -193,4 +193,100 @@ int DBmanager::getseatingCapacity()
     return totalSeatingCapacity;
 }
 
+/*
+ * loadTeamSouvenirs(QString campus)
+ * Using the "select XXX from" query funtion, the souvenirs for a specified campus are read in from the database into a QSqlQueryModel.
+ * If a database error occurs, an error warning is printed to the console.
+ */
+QSqlQueryModel* DBmanager::loadTeamSouvenirs(QString stadiumName)
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
 
+    QString sQry = "select itemName as 'Souvenirs', price as 'Cost($)' from stadium_Souvenirs where stadiumName = '" +stadiumName+ "';";
+    qDebug() << sQry;
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading stadium database\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+/*
+ * loadSouvCart(QString sQry)
+ * Using the "select XXX from" query funtion, the selected sovenirs are read in from the database into a QSqlQueryModel.
+ * The query is an accumulator query that contains all the souvenirs the user has selected to add to an update quey using SQL code "UNION".
+ * If a database error occurs, an error warning is printed to the console.
+ */
+QSqlQueryModel* DBmanager::loadSouvCart(QString sQry)
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+    QSqlQuery qry;
+    qry.prepare(sQry);
+
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading Souvenirs cart\n";
+    }
+
+    model->setQuery(qry);
+    return model;
+}
+
+/*
+ * createCart()
+ * Creates a temporary table called cart in the SQL Database, and alters the table by adding a column called quantity for the quanity purchased.
+ */
+void DBmanager::createCart()
+{
+    //cartQry - temporary table
+    QSqlQuery cartQry;
+    cartQry.prepare("create table Cart as SELECT * from stadium_Souvenirs;");
+
+    if(!cartQry.exec())
+    {
+        qDebug() << "\nError Creating Cart\n";
+    }
+    cartQry.prepare("ALTER table Cart add quantity real default 0;");
+    if(!cartQry.exec())
+    {
+        qDebug() << "\nError Creating Quanitity Column\n";
+    }
+}
+
+/*
+ * deleteCart()
+ * This deletes the cart table in the SQL Database when the user has completed their shopping trip.
+ */
+void DBmanager::deleteCart()
+{
+    //cartQry - temporary table
+    QSqlQuery cartQry;
+    cartQry.prepare("drop table Cart;");
+
+    if(!cartQry.exec())
+    {
+        qDebug() << "\nError dropping Cart\n";
+    }
+}
+
+/*
+ * updateCartQuantity(QString stadiumName, QString souv, int quant)
+ * This function updates the changes of quantity to the cart table in the SQL Database.
+ */
+void DBmanager::updateCartQuantity(QString stadiumName, QString souv, int quant)
+{
+    //Update quantity
+    QSqlQuery updateQry;
+    QString uQry = "UPDATE Cart SET quantity = quantity+" +QString::number(quant)+ " WHERE stadiumName = '" +stadiumName+ "' and itemName = '" +souv+ "';";
+    updateQry.prepare(uQry);
+
+    if(!updateQry.exec())
+    {
+        qDebug() << "\nError updating Carts\n";
+    }
+}

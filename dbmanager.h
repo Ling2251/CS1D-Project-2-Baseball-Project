@@ -38,6 +38,11 @@ public:
     QSqlQueryModel* loadGreatesCenterDistanceTeam();
     QSqlQueryModel* loadOpenRoofTypeTeam();
     int getseatingCapacity();
+    QSqlQueryModel* loadTeamSouvenirs(QString stadiumName);
+    QSqlQueryModel* loadSouvCart(QString sQry);
+    void createCart();
+    void deleteCart();
+    void updateCartQuantity(QString stadiumName, QString souv, int quant);
 
     stadiumInfo team;
 private:
