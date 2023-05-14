@@ -36,6 +36,10 @@ private slots:
 
 private:
     Ui::stadiumEdit *ui;
+
+    bool isNumber1;
+    bool isNumber2;
+    bool isNumber3;
 };
 
 #endif // STADIUMEDIT_H
