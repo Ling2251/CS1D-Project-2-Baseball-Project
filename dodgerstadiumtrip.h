@@ -137,6 +137,8 @@ private slots:
 
    // void on_stadiumComboBox_activated(int index);
 
+void on_comboBox_currentTextChanged(const QList<QString> stadiums);
+
 private:
     Ui::dodgerstadiumtrip *ui;
 };

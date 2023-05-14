@@ -124,3 +124,43 @@ dodgerstadiumtrip::~dodgerstadiumtrip()
 
 //}
 
+
+void dodgerstadiumtrip::on_comboBox_currentTextChanged(const QList<QString> stadiums)
+{
+    QList<QString> myString = {"Dodger Stadium",
+               "Oracle Park",
+                "Oakland-Alameda County Coliseum",
+                "Angel Stadium of Anaheim",
+                "Petco Park",
+                "Chase Field",
+                "Safeco Field",
+                "Coors Field",
+                "Globe Life Park in Arlington",
+                "Minute Maid Park",
+                "Target Field",
+                "Kauffman Stadium",
+                "Busch Stadium",
+                "Miller Park",
+                "Wrigley Field",
+                "Guaranteed Rate Field",
+                "Comerica Park",
+                "Progressive Field",
+                "Great American Ball Park",
+                "Sun Trust Park",
+                "Sun Trust Park",
+                "Tropicana Field",
+                "Marlins Park",
+                "Rogers Centre",
+                "PNC Park",
+                "Yankee Stadium",
+                "Citizens Bank",
+                "Oriole Park at Camden Yard",
+                "Nationals Park",
+                "Fenway Park",
+                "Citi Field",
+                "Citizens Bank Park"
+                };
+    stadiums = myString.toList();
+    ui->comboBox->addItems(myString);
+}
+
