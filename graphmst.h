@@ -131,13 +131,13 @@ public:
         }
     };
     
-    Graph g;
 
 private slots:
     void on_MSTpushButton_clicked();
 
 private:
     Ui::graphMST *ui;
+    graphMST gMST;
 };
 
 
