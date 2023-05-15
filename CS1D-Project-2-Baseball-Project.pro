@@ -24,10 +24,13 @@ SOURCES += \
     stadiumedit.cpp
 
 HEADERS += \
+    BFSedge.h \
     connecteUIPgae.h \
     dbmanager.h \
+    dfs.h \
     differentdistance.h \
     displaypage.h \
+    graphBFS.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
