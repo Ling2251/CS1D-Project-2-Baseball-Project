@@ -130,6 +130,8 @@ public:
                 rnk[y]++;
         }
     };
+    
+    Graph g;
 
 private slots:
     void on_MSTpushButton_clicked();
