@@ -15,7 +15,12 @@ graphMST::~graphMST()
 
 void graphMST::on_MSTpushButton_clicked()
 {
-    //loadKruskalMST()
-    int totalWeight = g.kruskalMST();
+    //NEED TO loadKruskalMST()
+    for(int i=0; i > graphVector.size(); i++)
+    {
+        g.addedge(graphVector.at(i).src,graphVector.at(i).dest,graphVector.at(i).wt);    //ADDING EDGE LOOP
+    }
+    
+    int totalWeight = g.kruskalMST();                                  //CALLS MST 
     //NEED TO OUTPUT TOTAL WEIGHT
 }
