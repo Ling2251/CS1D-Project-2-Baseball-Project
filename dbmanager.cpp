@@ -195,18 +195,23 @@ int DBmanager::getseatingCapacity()
 }
 
 
-QSqlQueryModel* DBmanager::loadKruskalMST(Graph& g){
+QSqlQueryModel* DBmanager::loadKruskalMST()
+{
     QSqlQueryModel* model = new QSqlQueryModel();
     QString sQry = "select * from stadium_Distances;";
     QSqlQuery qry;
     qry.prepare(sQry);
-
+    graphInfo currCity;  //current City in loop
     if(!qry.exec())
     {
         qDebug() << "\nError Loading baseball team informations\n";
     }
     while(qry.next()){
-        g.addEdge(qry.value(0).toString(), qry.value(1).toString(), qry.value(3).toInt());
+        currCity.src = qry.value(0).toString();
+        currCity.dest = qry.value(1).toString();
+        currCity.wt = qry.value(3).toInt();
+        graphVector.push_back(currCity);
+
     }
 
     model->setQuery(qry);

@@ -15,6 +15,7 @@ graphMST::~graphMST()
 
 void graphMST::on_MSTpushButton_clicked()
 {
-    int totalWeight = kruskalMST();
+    //loadKruskalMST()
+    int totalWeight = g.kruskalMST();
     //NEED TO OUTPUT TOTAL WEIGHT
 }
