@@ -75,7 +75,7 @@
     <string>View Souvenir Shop</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="stadiumComboBox">
    <property name="geometry">
     <rect>
      <x>260</x>

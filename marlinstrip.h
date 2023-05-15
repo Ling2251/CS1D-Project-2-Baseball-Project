@@ -15,6 +15,9 @@ public:
     explicit marlinstrip(QWidget *parent = nullptr);
     ~marlinstrip();
 
+private slots:
+    void on_comboBox_activated(int index);
+
 private:
     Ui::marlinstrip *ui;
 };
