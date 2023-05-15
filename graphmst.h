@@ -21,8 +21,7 @@ public:
     ~graphMST();
 
     // Structure to represent a graph
-    struct Graph
-    {
+  
         vector< pair<int, pair<string, string> > > edges;
 
         // Utility function to add an edge
@@ -81,7 +80,6 @@ public:
 
             return mst_wt;
         }
-    };
 
     // To represent Disjoint Sets
     struct DisjointSets
