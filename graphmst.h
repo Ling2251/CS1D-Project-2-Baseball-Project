@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <utility> //for pair 
 #include "dbmanager.h"
 using namespace std;
 
