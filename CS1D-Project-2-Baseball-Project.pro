@@ -10,45 +10,61 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    customtrip.cpp \
     dbmanager.cpp \
     differentdistance.cpp \
     displaypage.cpp \
+    dodgerstadiumtrip.cpp \
+    intputdata.cpp \
     loginpage.cpp \
     main.cpp \
     maintenancepage.cpp \
     mainwindow.cpp \
+    marlinstrip.cpp \
     planntingtrip.cpp \
     receiptpage.cpp \
     souveniredit.cpp \
+    shortcustomtrip.cpp \
     souvenirshop.cpp \
     stadiumedit.cpp
 
 HEADERS += \
     BFSedge.h \
     connecteUIPgae.h \
+    customtrip.h \
     dbmanager.h \
     dfs.h \
     differentdistance.h \
     displaypage.h \
     graphBFS.h \
+    dodgerstadiumtrip.h \
+    intputdata.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
+    marlinstrip.h \
     planntingtrip.h \
     receiptpage.h \
     souveniredit.h \
+    shortcustomtrip.h \
     souvenirshop.h \
     stadiumedit.h
 
+
 FORMS += \
+    customtrip.ui \
     differentdistance.ui \
     displaypage.ui \
+    dodgerstadiumtrip.ui \
+    intputdata.ui \
     loginpage.ui \
     maintenancepage.ui \
     mainwindow.ui \
+    marlinstrip.ui \
     planntingtrip.ui \
     receiptpage.ui \
     souveniredit.ui \
+    shortcustomtrip.ui \
     souvenirshop.ui \
     stadiumedit.ui
 
@@ -59,3 +75,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     ss.qrc
+
