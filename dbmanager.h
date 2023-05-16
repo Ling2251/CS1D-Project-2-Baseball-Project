@@ -21,7 +21,14 @@ struct stadiumInfo{
     QString roofType;
 };
 
-//vector<stadiumInfo> teamInfo;
+struct DFSBFSInfo{
+    QString stardingStadium;
+    QString endingStadium;
+    int distance;
+};
+
+//vector<DFSBFSInfo> DFSBFSvector;
+
 
 class DBmanager
 {
@@ -40,11 +47,13 @@ public:
     int getseatingCapacity();
     QSqlQueryModel* loadTeamSouvenirs(QString stadiumName);
     QSqlQueryModel* loadSouvCart(QString sQry);
+//    DFSBFSInfo loadDFSBFS();
     void createCart();
     void deleteCart();
     void updateCartQuantity(QString stadiumName, QString souv, int quant);
 
     stadiumInfo team;
+
 private:
 
 };
