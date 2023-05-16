@@ -24,7 +24,7 @@ struct stadiumInfo{
 
 //vector<stadiumInfo> teamInfo;
 
-struct MSTgraphInfo{
+struct graphInfo{
     string src;     //source stadium
     string dest;   //destination stadium
     int wt;  //weight of edge
