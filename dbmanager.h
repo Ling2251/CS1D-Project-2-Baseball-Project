@@ -27,7 +27,7 @@ struct DFSBFSInfo{
     int distance;
 };
 
-//vector<DFSBFSInfo> DFSBFSvector;
+vector<DFSBFSInfo> DFSBFSvector;
 
 
 class DBmanager
@@ -47,7 +47,7 @@ public:
     int getseatingCapacity();
     QSqlQueryModel* loadTeamSouvenirs(QString stadiumName);
     QSqlQueryModel* loadSouvCart(QString sQry);
-//    DFSBFSInfo loadDFSBFS();
+    vector<DFSBFSInfo> loadDFSBFS();
     void createCart();
     void deleteCart();
     void updateCartQuantity(QString stadiumName, QString souv, int quant);

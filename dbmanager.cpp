@@ -297,23 +297,23 @@ void DBmanager::updateCartQuantity(QString stadiumName, QString souv, int quant)
 //    int distance;
 //};
 
-//DFSBFSInfo DBmanager::loadDFSBFS()
-//{
-//    QString sQry = "select * from stadium_Distances;";
-//    QSqlQuery qry;
-//    qry.prepare(sQry);
-//    DFSBFSInfo currStadium;  //current Stadium in loop
-//    if(!qry.exec())
-//    {
-//        qDebug() << "\nError Loading baseball team informations\n";
-//    }
-//    while(qry.next()){
-//        currStadium.stardingStadium = qry.value(0).toString();
-//        currStadium.endingStadium = qry.value(1).toString();
-//        currStadium.distance = qry.value(2).toInt();
-//        DFSBFSvector.push_back(currStadium);
+vector<DFSBFSInfo> DBmanager::loadDFSBFS()
+{
+    QString sQry = "select * from stadium_Distances;";
+    QSqlQuery qry;
+    qry.prepare(sQry);
+    DFSBFSInfo currStadium;  //current Stadium in loop
+    if(!qry.exec())
+    {
+        qDebug() << "\nError Loading baseball team informations\n";
+    }
+    while(qry.next()){
+        currStadium.stardingStadium = qry.value(0).toString();
+        currStadium.endingStadium = qry.value(1).toString();
+        currStadium.distance = qry.value(2).toInt();
+        DFSBFSvector.push_back(currStadium);
 
-//    }
+    }
 
-////   return DFSBFSvector;
-//}
+   return DFSBFSvector;
+}
