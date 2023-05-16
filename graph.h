@@ -1,19 +1,19 @@
-#ifndef GRAPH_H
-#define GRAPH_H
+//#ifndef GRAPH_H
+//#define GRAPH_H
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <limits.h>
-#include <QString>
-#include <queue>
-#include <iomanip>
-#include <cstring>
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//#include <queue>
+//#include <limits.h>
+//#include <QString>
+//#include <queue>
+//#include <iomanip>
+//#include <cstring>
 
-#include "dbmanager.h"
+//#include "dbmanager.h"
 
-using namespace std;
+//using namespace std;
 
 //// DFS
 //struct Edge
@@ -434,4 +434,4 @@ using namespace std;
 //    }
 //};
 
-#endif // GRAPH_H
+//#endif // GRAPH_H
