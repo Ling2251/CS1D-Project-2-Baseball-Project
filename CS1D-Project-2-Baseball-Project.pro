@@ -29,14 +29,12 @@ SOURCES += \
     stadiumedit.cpp
 
 HEADERS += \
-    BFSedge.h \
     connecteUIPgae.h \
     customtrip.h \
     dbmanager.h \
-    dfs.h \
     differentdistance.h \
     displaypage.h \
-    graphBFS.h \
+    graph.h \
     dodgerstadiumtrip.h \
     intputdata.h \
     loginpage.h \

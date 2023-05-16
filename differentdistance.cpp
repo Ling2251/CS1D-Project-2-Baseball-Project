@@ -1,6 +1,8 @@
 #include "differentdistance.h"
 #include "ui_differentdistance.h"
 #include "mainwindow.h"
+#include "dbmanager.h"
+#include "graph.h"
 
 DifferentDistance::DifferentDistance(QWidget *parent) :
     QDialog(parent),
@@ -29,4 +31,38 @@ void DifferentDistance::on_mainPagrButton_clicked()
     }
     hide();
 }
+
+
+//void DifferentDistance::on_DFSpushButton_clicked()
+//{
+//    Graph dfs;
+
+//        int distance = graph->startDFS("Oracle Park");
+//        QString pathStr;
+//        for (const auto &dest : graph->dfsOrder) {
+//            pathStr += dest + "\n";
+//        }
+
+//        QMessageBox msgBox;
+//        msgBox.setText("DFS starting from Oracle Park (San Francisco Giants)");
+//        msgBox.setInformativeText("Total distance: " + QString::number(distance));
+//        msgBox.setDetailedText(pathStr);
+//        msgBox.exec();
+//}
+
+
+//void DifferentDistance::on_BFSpushButton_clicked()
+//{
+//    int distance = graph->startBFS("Target Field");
+//    QString pathStr;
+//    for (const auto &dest : graph->bfsOrder) {
+//        pathStr += dest + "\n";
+//    }
+
+//    QMessageBox msgBox;
+//    msgBox.setText("BFS starting from Target Field (Minnesota Twins)");
+//    msgBox.setInformativeText("Total distance: " + QString::number(distance));
+//    msgBox.setDetailedText(pathStr);
+//    msgBox.exec();
+//}
 

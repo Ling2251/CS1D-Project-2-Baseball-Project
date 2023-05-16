@@ -18,6 +18,10 @@ public:
 private slots:
     void on_mainPagrButton_clicked();
 
+    void on_DFSpushButton_clicked();
+
+    void on_BFSpushButton_clicked();
+
 private:
     Ui::DifferentDistance *ui;
 };

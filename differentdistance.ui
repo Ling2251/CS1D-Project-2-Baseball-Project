@@ -26,13 +26,38 @@
     <font>
      <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>75</weight>
      <italic>true</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
     <string>Main Page</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DFSpushButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>130</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DFS</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BFSpushButton">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>130</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BFS</string>
    </property>
   </widget>
  </widget>

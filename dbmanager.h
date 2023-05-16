@@ -27,7 +27,6 @@ struct DFSBFSInfo{
     int distance;
 };
 
-vector<DFSBFSInfo> DFSBFSvector;
 
 
 class DBmanager

@@ -297,22 +297,47 @@ void DBmanager::updateCartQuantity(QString stadiumName, QString souv, int quant)
 //    int distance;
 //};
 
+//vector<DFSBFSInfo> DBmanager::loadDFSBFS()
+//{
+//    QString sQry = "select * from stadium_Distances;";
+//    QSqlQuery qry;
+//    qry.prepare(sQry);
+//    DFSBFSInfo currStadium;  //current Stadium in loop
+//    if(!qry.exec())
+//    {
+//        qDebug() << "\nError Loading baseball team informations\n";
+//    }
+//    while(qry.next()){
+//        currStadium.stardingStadium = qry.value(0).toString();
+//        currStadium.endingStadium = qry.value(1).toString();
+//        currStadium.distance = qry.value(2).toInt();
+//        DFSBFSvector.push_back(currStadium);
+
+//    }
+
+//   return DFSBFSvector;
+//}
+
+
 vector<DFSBFSInfo> DBmanager::loadDFSBFS()
 {
     QString sQry = "select * from stadium_Distances;";
     QSqlQuery qry;
     qry.prepare(sQry);
-    DFSBFSInfo currStadium;  //current Stadium in loop
     if(!qry.exec())
     {
         qDebug() << "\nError Loading baseball team informations\n";
     }
+    vector<DFSBFSInfo> DFSBFSvector;
+
     while(qry.next()){
+        DFSBFSInfo currStadium; // Create a new instance for each row of data
+
         currStadium.stardingStadium = qry.value(0).toString();
         currStadium.endingStadium = qry.value(1).toString();
         currStadium.distance = qry.value(2).toInt();
-        DFSBFSvector.push_back(currStadium);
 
+        DFSBFSvector.push_back(currStadium); // Add the current stadium to the vector
     }
 
    return DFSBFSvector;
