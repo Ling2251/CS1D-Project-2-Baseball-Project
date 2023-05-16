@@ -46,7 +46,7 @@ public:
     QSqlQueryModel* loadSmallCenterDistanceTeam();
     QSqlQueryModel* loadGreatesCenterDistanceTeam();
     QSqlQueryModel* loadOpenRoofTypeTeam();
-    QSqlQueryModel* loadKruskalMST();
+    void loadKruskalMST();
     int getseatingCapacity();
     vector<graphInfo> graphVector;
     graphInfo currCity;
