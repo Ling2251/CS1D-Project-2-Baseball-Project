@@ -66,7 +66,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>101</width>
+     <width>141</width>
      <height>41</height>
     </rect>
    </property>
@@ -81,6 +81,19 @@
    </property>
    <property name="text">
     <string>Stadium Edit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readNewData">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>270</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add New data</string>
    </property>
   </widget>
  </widget>

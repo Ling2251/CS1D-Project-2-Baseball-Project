@@ -40,20 +40,20 @@ void maintenancePage::on_SouvenirButton_clicked()
 }
 
 
-//void maintenancePage::on_InputFileButton_clicked()
-//{
-//    intputData intputData;
-//    hide();
-//    intputData.setModal(true);
-//    intputData.exec();
-//}
-
-
 void maintenancePage::on_stadiumButton_clicked()
 {
     stadiumEdit stadiumEdit;
     hide();
     stadiumEdit.setModal(true);
     stadiumEdit.exec();
+}
+
+
+void maintenancePage::on_readNewData_clicked()
+{
+    intputData intputData;
+    hide();
+    intputData.setModal(true);
+    intputData.exec();
 }
 

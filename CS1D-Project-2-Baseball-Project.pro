@@ -22,7 +22,6 @@ SOURCES += \
     mainwindow.cpp \
     marlinstrip.cpp \
     planntingtrip.cpp \
-    receiptpage.cpp \
     souveniredit.cpp \
     shortcustomtrip.cpp \
     souvenirshop.cpp \
@@ -41,7 +40,6 @@ HEADERS += \
     mainwindow.h \
     marlinstrip.h \
     planntingtrip.h \
-    receiptpage.h \
     souveniredit.h \
     shortcustomtrip.h \
     souvenirshop.h \
@@ -59,7 +57,6 @@ FORMS += \
     mainwindow.ui \
     marlinstrip.ui \
     planntingtrip.ui \
-    receiptpage.ui \
     souveniredit.ui \
     shortcustomtrip.ui \
     souvenirshop.ui \

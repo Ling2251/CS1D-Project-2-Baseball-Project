@@ -86,8 +86,6 @@ void souvenirEdit::on_souvenirUpdateButton_clicked()
     //connect database
     QSqlDatabase conn;
 
-    QSqlQueryModel * modal = new QSqlQueryModel();
-
     QSqlQuery* qry = new QSqlQuery(conn);
 
     //create three string variables

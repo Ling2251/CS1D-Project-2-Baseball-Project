@@ -4,6 +4,7 @@
 #include <QDialog>
 #include"souveniredit.h"
 #include"stadiumedit.h"
+#include "intputdata.h"
 
 namespace Ui {
 class maintenancePage;
@@ -25,6 +26,8 @@ private slots:
     void on_stadiumButton_clicked();
 
     void on_mainPagrButton_clicked();
+
+    void on_readNewData_clicked();
 
 private:
     Ui::maintenancePage *ui;
