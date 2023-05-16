@@ -33,8 +33,8 @@ void DifferentDistance::on_mainPagrButton_clicked()
 }
 
 
-//void DifferentDistance::on_DFSpushButton_clicked()
-//{
+void DifferentDistance::on_DFSpushButton_clicked()
+{
 //    Graph dfs;
 
 //        int distance = graph->startDFS("Oracle Park");
@@ -48,11 +48,11 @@ void DifferentDistance::on_mainPagrButton_clicked()
 //        msgBox.setInformativeText("Total distance: " + QString::number(distance));
 //        msgBox.setDetailedText(pathStr);
 //        msgBox.exec();
-//}
+}
 
 
-//void DifferentDistance::on_BFSpushButton_clicked()
-//{
+void DifferentDistance::on_BFSpushButton_clicked()
+{
 //    int distance = graph->startBFS("Target Field");
 //    QString pathStr;
 //    for (const auto &dest : graph->bfsOrder) {
@@ -64,5 +64,5 @@ void DifferentDistance::on_mainPagrButton_clicked()
 //    msgBox.setInformativeText("Total distance: " + QString::number(distance));
 //    msgBox.setDetailedText(pathStr);
 //    msgBox.exec();
-//}
+}
 
