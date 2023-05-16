@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>30</y>
+     <y>20</y>
      <width>371</width>
      <height>21</height>
     </rect>
@@ -26,23 +26,10 @@
     <string>Total Distance Traveled: </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>260</y>
-     <width>191</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Choose another stadium</string>
-   </property>
-  </widget>
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>110</y>
      <width>441</width>
      <height>141</height>
@@ -59,20 +46,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Current Stadium: </string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>260</y>
-     <width>191</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Previous Stadium</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
@@ -86,6 +60,52 @@
    </property>
    <property name="text">
     <string>View Souvenir Shop</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>171</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choose Starting Stadium</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>270</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Choose Ending Stadium</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>171</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>300</y>
+     <width>171</width>
+     <height>32</height>
+    </rect>
    </property>
   </widget>
  </widget>

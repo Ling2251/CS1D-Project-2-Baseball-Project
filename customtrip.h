@@ -15,6 +15,11 @@ public:
     explicit customtrip(QWidget *parent = nullptr);
     ~customtrip();
 
+private slots:
+    void on_comboBox_activated(int index);
+
+    void on_comboBox_2_activated(int index);
+
 private:
     Ui::customtrip *ui;
 };

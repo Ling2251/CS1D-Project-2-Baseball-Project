@@ -97,6 +97,7 @@ dodgerstadiumtrip::dodgerstadiumtrip(QWidget *parent) :
     m_model->setItem(32, 0, new QStandardItem("Fenway Park"));
     m_model->setItem(33, 0, new QStandardItem("Citi Field"));
     m_model->setItem(34, 0, new QStandardItem("Citizens Bank Park"));
+
     ui->tableView->setModel(m_model);
 
     QHeaderView *header = ui->tableView->horizontalHeader();
