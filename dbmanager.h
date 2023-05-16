@@ -30,7 +30,6 @@ struct graphInfo{
     int wt;  //weight of edge
 };
 
-vector<graphInfo> graphVector;
 
 
 class DBmanager
@@ -49,7 +48,8 @@ public:
     QSqlQueryModel* loadOpenRoofTypeTeam();
     QSqlQueryModel* loadKruskalMST();
     int getseatingCapacity();
-
+    vector<graphInfo> graphVector;
+    graphInfo currCity;
     stadiumInfo team;
 private:
 
