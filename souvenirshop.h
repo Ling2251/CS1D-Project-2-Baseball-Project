@@ -36,6 +36,8 @@ private slots:
 
     void on_mainPagrButton_clicked();
 
+    void on_doneBuying_clicked();
+
 private:
     Ui::souvenirShop *ui;
     Souvenir souv;                  /**< struct of the purchased souvenirs*/
@@ -43,6 +45,7 @@ private:
     QString sQry;                   /**< souvenir query - ACCUMULATOR*/
     DBmanager m_database;           /**< database manager variable*/
     double total;                   /**< double of the total price form the purchased souvenirs*/
+    int quantity = 0;
 
 };
 

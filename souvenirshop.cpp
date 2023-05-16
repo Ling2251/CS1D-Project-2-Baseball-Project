@@ -7,7 +7,6 @@ souvenirShop::souvenirShop(QWidget *parent) :
     ui(new Ui::souvenirShop)
 {
     ui->setupUi(this);
-
     // clear the prives shoping cart item
     m_database.deleteCart();
     // Then creat a new shoping cart
@@ -39,7 +38,7 @@ void souvenirShop::on_addSouvenir_button_clicked()
     souv.stadiumName = stadiumName;
 
     //get the quantity and item cost
-    int quantity = ui-> quantity_spinBox -> cleanText().toInt();
+     quantity = ui-> quantity_spinBox -> cleanText().toInt();
     souv.quantity = quantity;
 
     souvenirCart.push(souv);
@@ -138,5 +137,12 @@ void souvenirShop::on_mainPagrButton_clicked()
        }
     }
     hide();
+}
+
+
+void souvenirShop::on_doneBuying_clicked()
+{
+    ui->souvenirShope->hide();
+    ui->receiptpage->show();
 }
 
