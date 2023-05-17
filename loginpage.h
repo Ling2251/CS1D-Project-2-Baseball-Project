@@ -8,6 +8,10 @@
 #include <QMessageBox>
 #include "maintenancepage.h"
 #include"dbmanager.h"
+#include<QPixmap>
+#include <QApplication>
+#include <QMainWindow>
+#include <QLabel>
 using namespace std;
 
 
