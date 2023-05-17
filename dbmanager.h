@@ -1,27 +1,37 @@
 #ifndef DBMANAGER_H
 #define DBMANAGER_H
 
-#include <QObject>
+#include <QSqlDatabase>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
 #include <QtSql>
-#include <QVector>
-#include <QQueue>
-#include <iostream>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QDebug>
+#include <QTableView>
+#include <QCryptographicHash>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-struct stadiumInfo{
-    QString teamName;
-    QString stadiumName;
-    int     seatingCapacity;
-    QString location;
-    QString playingSurface;
-    QString league;
-    int     dateOpened;
-    int     distanceToCenterFiled;
-    QString ballParkTypology;
-    QString roofType;
+struct teamData {
+    QString team_name;
+    QString stadium_name;
+    int stadium_seating_capacity;
+    QString stadium_location;
+    QString stadium_playing_surface;
+    QString team_league;
+    int stadium_date_opened;
+    int stadium_dist_ctrfield;
+    QString stadium_typology;
+    QString stadium_roof_type;
 };
 
-//vector<stadiumInfo> teamInfo;
+struct distanceEdge {
+    QString team_name_origin;
+    QString team_name_destination;
+    int distance;
+};
 
 class DBmanager
 {
@@ -43,8 +53,25 @@ public:
     void createCart();
     void deleteCart();
     void updateCartQuantity(QString stadiumName, QString souv, int quant);
+    //!
+    //! \brief getStadiumData
+    //! \param stadium name of stadium to return data from
+    //! \return teamData struct with stadium's data or team_name "ERROR" if team not found
+    //!
+    QString getStadiumData(const QString& stadium);
+    //!
+    //! \brief getStadiumNames
+    //! \return vector of stadium names from database
+    //!
+    vector<QString> getStadiumNames();
 
-    stadiumInfo team;
+    //!
+    //! \brief getDistances
+    //! \return vector containing distances to other stadiums
+    //!
+    vector<distanceEdge> getDistances(const QString& teamName);
+
+
 private:
 
 };
