@@ -35,9 +35,4 @@ void MainWindow::on_planTripButton_clicked()
 }
 
 
-void MainWindow::on_differentDistanceButton_clicked()
-{
-    hide();
-    uiConnect.linkToDifferentDistance();
-}
 

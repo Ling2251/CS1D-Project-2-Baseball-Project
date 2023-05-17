@@ -15,6 +15,7 @@ intputData::~intputData()
 
 void intputData::on_NewStadiumInfo_clicked()
 {
+    hasReadFile = true;
     // Prompt the user to choose a text file
     QString filePath = QFileDialog::getOpenFileName(this, "Select Text File", QString(), "Text Files (*.txt)");
     if (filePath.isEmpty()) {
@@ -69,6 +70,7 @@ void intputData::on_NewStadiumInfo_clicked()
 
 void intputData::on_NewDistenctInfo_clicked()
 {
+    hasReadFile = true;
     // Prompt the user to choose a text file
     QString filePath = QFileDialog::getOpenFileName(this, "Select Text File", QString(), "Text Files (*.txt)");
     if (filePath.isEmpty()) {

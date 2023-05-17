@@ -23,8 +23,6 @@ private slots:
 
     void on_planTripButton_clicked();
 
-    void on_differentDistanceButton_clicked();
-
 private:
     Ui::MainWindow *ui;
     DBmanager my_database;

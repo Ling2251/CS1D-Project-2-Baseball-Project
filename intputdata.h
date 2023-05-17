@@ -18,6 +18,9 @@ class intputData : public QDialog
 public:
     explicit intputData(QWidget *parent = nullptr);
     ~intputData();
+    bool HasReadFile(){
+        return hasReadFile;
+    }
 
 private slots:
     void on_NewStadiumInfo_clicked();
@@ -27,6 +30,8 @@ private slots:
 private:
     Ui::intputData *ui;
     DBmanager my_database;
+
+    bool hasReadFile = false;
 };
 
 #endif // INTPUTDATA_H
