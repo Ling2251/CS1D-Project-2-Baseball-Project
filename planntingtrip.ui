@@ -6,176 +6,455 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
-    <height>565</height>
+    <width>781</width>
+    <height>558</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QStackedWidget" name="stackedWidget">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
+     <x>0</x>
+     <y>0</y>
      <width>781</width>
-     <height>541</height>
+     <height>561</height>
     </rect>
    </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="Mainpage">
-    <widget class="QPushButton" name="mainPagrButton">
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>Simple Trip</string>
+    </attribute>
+    <widget class="QComboBox" name="simpleFromComboBox">
      <property name="geometry">
       <rect>
-       <x>650</x>
-       <y>20</y>
-       <width>101</width>
+       <x>20</x>
+       <y>130</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="simpleToComboBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>102</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>From</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>175</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>To</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simpleStartButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>250</y>
+       <width>80</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>491</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Simple Trip&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Plan a trip through every stadium from the selected starting and ending stadiums.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>-90</x>
+       <y>-10</y>
+       <width>891</width>
+       <height>551</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <zorder>label_6</zorder>
+    <zorder>label_10</zorder>
+    <zorder>simpleFromComboBox</zorder>
+    <zorder>simpleToComboBox</zorder>
+    <zorder>label_3</zorder>
+    <zorder>simpleStartButton</zorder>
+    <zorder>label_4</zorder>
+    <zorder>label_5</zorder>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Custom Trip</string>
+    </attribute>
+    <widget class="QComboBox" name="startComboBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>390</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>211</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; background-color: #D3D3D3; color: #000000&quot;&gt;Starting Team&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addPushButton">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>310</y>
+       <width>80</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="startPushButton">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>400</y>
+       <width>80</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="teamListWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>391</width>
+       <height>192</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="removePushButton">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>310</y>
+       <width>80</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Remove</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="addComboBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>310</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>181</width>
        <height>41</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
      <property name="text">
-      <string>Main Page</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; text-decoration: underline; color:#000000; background-color:#d3d3d3;&quot;&gt;Custom Trip&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="mainPagrButton_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>230</y>
-       <width>251</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Start trip at Dodger stadium</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="mainPagrButton_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>330</y>
-       <width>251</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="text">
-      <string>Vist teams at Marlins Park </string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>180</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Shortest path</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>190</y>
-       <width>221</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Shortest path with order specified</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="mainPagrButton_4">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>410</x>
-       <y>230</y>
-       <width>241</width>
-       <height>71</height>
+       <y>120</y>
+       <width>331</width>
+       <height>80</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="mostEfficientRadioButton">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(211, 211, 211);</string>
+        </property>
+        <property name="text">
+         <string>Most Efficient Order</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="shortestTripsRadioButton">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(211, 211, 211);</string>
+        </property>
+        <property name="text">
+         <string>In Order</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>771</width>
+       <height>521</height>
+      </rect>
      </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
      <property name="text">
-      <string>Start your own custom Trip</string>
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="mainPagrButton_5">
+    <zorder>label_7</zorder>
+    <zorder>label_9</zorder>
+    <zorder>label_11</zorder>
+    <zorder>verticalLayoutWidget</zorder>
+    <zorder>startComboBox</zorder>
+    <zorder>addPushButton</zorder>
+    <zorder>startPushButton</zorder>
+    <zorder>teamListWidget</zorder>
+    <zorder>removePushButton</zorder>
+    <zorder>addComboBox</zorder>
+    <zorder>label_8</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Other</string>
+    </attribute>
+    <widget class="QPushButton" name="MSTpushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MST</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="DFSpushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DFS</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BFSpushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>BFS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>430</y>
-       <width>251</width>
-       <height>71</height>
+       <y>10</y>
+       <width>51</width>
+       <height>51</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>75</weight>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
+     <property name="text">
+      <string/>
      </property>
-     <property name="whatsThis">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
      </property>
      <property name="text">
-      <string>Strat a shortest custom trip</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Other&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>110</y>
+       <width>401</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_2"/>
   </widget>
  </widget>
  <resources/>
