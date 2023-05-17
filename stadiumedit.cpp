@@ -96,7 +96,7 @@ void stadiumEdit::on_update_clicked()
     isNumber3 = false;
 
     double numberValue1 = capacity.toDouble(&isNumber1);
-    double numberValue2 = dateOpen.toDouble(&isNumber2);
+    double numberValue2 = distanceToCenter.toDouble(&isNumber2);
     double numberValue3 = dateOpen.toDouble(&isNumber3);
 
     if(isNumber1 && isNumber2 && isNumber3)
@@ -113,10 +113,6 @@ void stadiumEdit::on_update_clicked()
     if(qry->exec())
     {
         QMessageBox::critical(this,tr("Edit"),tr("Updated"));
-    }
-    else
-    {
-        QMessageBox::critical(this,tr("Error::"),qry->lastError().text());
     }
 }
 
