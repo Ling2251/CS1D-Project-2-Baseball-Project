@@ -11,14 +11,14 @@ CONFIG += c++11
 
 SOURCES += \
     dbmanager.cpp \
-    differentdistance.cpp \
     displaypage.cpp \
+    graph.cpp \
+    intputdata.cpp \
     loginpage.cpp \
     main.cpp \
     maintenancepage.cpp \
     mainwindow.cpp \
     planntingtrip.cpp \
-    receiptpage.cpp \
     souveniredit.cpp \
     souvenirshop.cpp \
     stadiumedit.cpp
@@ -26,25 +26,25 @@ SOURCES += \
 HEADERS += \
     connecteUIPgae.h \
     dbmanager.h \
-    differentdistance.h \
     displaypage.h \
+    graph.h \
+    intputdata.h \
     loginpage.h \
     maintenancepage.h \
     mainwindow.h \
     planntingtrip.h \
-    receiptpage.h \
     souveniredit.h \
     souvenirshop.h \
     stadiumedit.h
 
+
 FORMS += \
-    differentdistance.ui \
     displaypage.ui \
+    intputdata.ui \
     loginpage.ui \
     maintenancepage.ui \
     mainwindow.ui \
     planntingtrip.ui \
-    receiptpage.ui \
     souveniredit.ui \
     souvenirshop.ui \
     stadiumedit.ui

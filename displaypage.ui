@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1267</width>
-    <height>658</height>
+    <width>1264</width>
+    <height>678</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,9 +38,9 @@
   <widget class="QLabel" name="BackgroundImag">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1091</width>
+     <x>10</x>
+     <y>20</y>
+     <width>1251</width>
      <height>641</height>
     </rect>
    </property>
@@ -53,6 +53,183 @@
     <rect>
      <x>10</x>
      <y>10</y>
+     <width>81</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>DISPLAY</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="SortedLabel">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>731</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="TeamComboBox">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>140</y>
+     <width>171</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DisplayLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Display This Team </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="displayTeamInfo">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>170</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ok</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="StadiumtableView">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>1041</width>
+     <height>551</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="allTeamDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>All Team</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="majorLeagueDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>330</y>
+     <width>141</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Major League Team</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="AmericanTeamDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>American League Team</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="greatestDistanceDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>410</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>greatest Distance</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="smallestDistanceDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>smallest Distance</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="roofTypeDisplay">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>490</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Roof Type</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lable">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>240</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -67,26 +244,38 @@
     </font>
    </property>
    <property name="text">
-    <string>Sorted By:</string>
+    <string>Display By:</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="StadiumtableWidget">
+  <widget class="QLabel" name="lable_2">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>70</y>
-     <width>1121</width>
-     <height>571</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="SortedLabel">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>10</y>
+     <x>10</x>
+     <y>530</y>
      <width>201</width>
      <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Number of Opened Roof</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="numberOfOpenedRoof">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>560</y>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
@@ -102,11 +291,69 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="numberSeatingCapacity">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>630</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lable_3">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>600</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Number Seating Capacity</string>
+   </property>
+  </widget>
   <zorder>BackgroundImag</zorder>
   <zorder>mainPagrButton</zorder>
   <zorder>label</zorder>
-  <zorder>StadiumtableWidget</zorder>
   <zorder>SortedLabel</zorder>
+  <zorder>TeamComboBox</zorder>
+  <zorder>DisplayLabel</zorder>
+  <zorder>displayTeamInfo</zorder>
+  <zorder>StadiumtableView</zorder>
+  <zorder>allTeamDisplay</zorder>
+  <zorder>majorLeagueDisplay</zorder>
+  <zorder>AmericanTeamDisplay</zorder>
+  <zorder>greatestDistanceDisplay</zorder>
+  <zorder>smallestDistanceDisplay</zorder>
+  <zorder>roofTypeDisplay</zorder>
+  <zorder>lable</zorder>
+  <zorder>lable_2</zorder>
+  <zorder>numberOfOpenedRoof</zorder>
+  <zorder>numberSeatingCapacity</zorder>
+  <zorder>lable_3</zorder>
  </widget>
  <resources/>
  <connections/>

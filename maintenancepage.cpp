@@ -1,5 +1,6 @@
 #include "maintenancepage.h"
 #include "ui_maintenancepage.h"
+#include "mainwindow.h"
 
 maintenancePage::maintenancePage(QWidget *parent) :
     QDialog(parent),
@@ -12,6 +13,22 @@ maintenancePage::maintenancePage(QWidget *parent) :
 maintenancePage::~maintenancePage()
 {
     delete ui;
+}
+
+void maintenancePage::on_mainPagrButton_clicked()
+{
+    QList<QWidget*> topLevelWidgets = qApp->topLevelWidgets();
+    foreach(QWidget *widget, topLevelWidgets) {
+       QMainWindow *mainWindow = qobject_cast<QMainWindow*>(widget);
+       if (mainWindow) {
+           // Show the main window if it was previously hidden
+           if (!mainWindow->isVisible()) {
+               mainWindow->show();
+           }
+           break;
+       }
+    }
+    hide();
 }
 
 void maintenancePage::on_SouvenirButton_clicked()
@@ -29,5 +46,14 @@ void maintenancePage::on_stadiumButton_clicked()
     hide();
     stadiumEdit.setModal(true);
     stadiumEdit.exec();
+}
+
+
+void maintenancePage::on_readNewData_clicked()
+{
+    intputData intputData;
+    hide();
+    intputData.setModal(true);
+    intputData.exec();
 }
 
