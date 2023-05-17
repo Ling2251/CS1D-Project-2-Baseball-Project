@@ -2,20 +2,30 @@
 #include "ui_souvenirshop.h"
 #include <mainwindow.h>
 
-souvenirShop::souvenirShop(QWidget *parent) :
+souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager *dbase, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::souvenirShop)
 {
     ui->setupUi(this);
-    // clear the prives shoping cart item
-    m_database.deleteCart();
-    // Then creat a new shoping cart
-    m_database.createCart();
+    ui->stackedWidget->setCurrentWidget(ui->souvenirShope);
+
+    m_database = dbase; // Assign dbase to m_database
+
+    // clear the prices shopping cart item
+    m_database->deleteCart();
+    // Then create a new shopping cart
+    m_database->createCart();
 
     // testing only
-    showSouvTableView(m_database.loadTeamSouvenirs("Arizona Diamondbacks"));
+    showSouvTableView(m_database->loadTeamSouvenirs("Arizona Diamondbacks"));
     // test only
-    ui->selectCampus_comboBox->setModel(m_database.loadAllTeam());
+    ui->selectCampus_comboBox->setModel(m_database->loadAllTeam());
+
+    stadiumNames = stadiums;
+    for (const auto &stadium : stadiumNames) {
+        ui->StadiumListWidge->addItem(stadium);
+        ui->StadiumcomboBox->addItem(stadium);
+    }
 }
 
 souvenirShop::~souvenirShop()
@@ -44,7 +54,7 @@ void souvenirShop::on_addSouvenir_button_clicked()
     souvenirCart.push(souv);
 
     //update Cart table
-    m_database.updateCartQuantity(stadiumName, itemName, quantity);
+    m_database->updateCartQuantity(stadiumName, itemName, quantity);
 
     //displays cart in table
    if(sQry == "")
@@ -58,7 +68,7 @@ void souvenirShop::on_addSouvenir_button_clicked()
                        "from Cart where stadiumName = '" +stadiumName+ "' and itemName = '" +itemName+ "'";
    }
 
-   showSouvCartTableView(m_database.loadSouvCart(sQry));
+   showSouvCartTableView(m_database->loadSouvCart(sQry));
 
 
    // call the calculate function
@@ -76,6 +86,7 @@ void souvenirShop::on_addSouvenir_button_clicked()
 void souvenirShop::showSouvCartTableView(QSqlQueryModel *model)
 {
     ui->souvCart_tableView->setModel(model);
+    ui->souvenirsListView->setModel(model);
 }
 
 /*
@@ -94,7 +105,12 @@ void souvenirShop::showSouvTableView(QSqlQueryModel *model)
 void souvenirShop::showTotal(double total)
 {
     // associate the total with the label in the uo page
-    ui->finalCostLabel->setNum(total);
+    ui->costLabel_2->setNum(total);
+}
+
+void souvenirShop::setDist(const int &dist){
+    totalDistance = dist;
+    ui->finalDistance_Lable->setNum(totalDistance);
 }
 
 //calculate function is to calculate total price from the cart table
@@ -142,7 +158,8 @@ void souvenirShop::on_mainPagrButton_clicked()
 
 void souvenirShop::on_doneBuying_clicked()
 {
-    ui->souvenirShope->hide();
-    ui->receiptpage->show();
+    ui->stackedWidget->setCurrentWidget(ui->receiptpage);
 }
+
+
 
