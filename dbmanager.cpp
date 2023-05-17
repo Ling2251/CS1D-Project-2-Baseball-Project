@@ -3,7 +3,7 @@
 DBmanager::DBmanager()
 {
     QSqlDatabase m_database = QSqlDatabase::addDatabase("QSQLITE");
-    m_database.setDatabaseName("../CS1D-Project-2-Baseball-Project/Baseball_Database.db");
+    m_database.setDatabaseName("../Baseball_Database.db");
 
     if (m_database.open())
     {
