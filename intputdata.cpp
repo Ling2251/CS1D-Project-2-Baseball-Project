@@ -1,5 +1,6 @@
 #include "intputdata.h"
 #include "ui_intputdata.h"
+#include "mainwindow.h"
 
 intputData::intputData(QWidget *parent) :
     QDialog(parent),
@@ -106,5 +107,22 @@ void intputData::on_NewDistenctInfo_clicked()
     file.close();
     qDebug() << "File processed and data inserted into the database.";
 
+}
+
+
+void intputData::on_mainPagrButton_clicked()
+{
+    QList<QWidget*> topLevelWidgets = qApp->topLevelWidgets();
+    foreach(QWidget *widget, topLevelWidgets) {
+       QMainWindow *mainWindow = qobject_cast<QMainWindow*>(widget);
+       if (mainWindow) {
+           // Show the main window if it was previously hidden
+           if (!mainWindow->isVisible()) {
+               mainWindow->show();
+           }
+           break;
+       }
+    }
+    hide();
 }
 

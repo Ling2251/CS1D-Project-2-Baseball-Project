@@ -78,6 +78,28 @@
     <string>Clike Here</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="mainPagrButton">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>450</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Main Page</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

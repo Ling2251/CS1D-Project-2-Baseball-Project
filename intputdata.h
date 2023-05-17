@@ -27,6 +27,8 @@ private slots:
 
     void on_NewDistenctInfo_clicked();
 
+    void on_mainPagrButton_clicked();
+
 private:
     Ui::intputData *ui;
     DBmanager my_database;

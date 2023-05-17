@@ -50,8 +50,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>150</y>
+     <x>250</x>
+     <y>190</y>
      <width>265</width>
      <height>117</height>
     </rect>
@@ -125,6 +125,22 @@
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>171</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/1.png/Administration.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

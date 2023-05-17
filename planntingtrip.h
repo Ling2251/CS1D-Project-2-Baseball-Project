@@ -42,6 +42,8 @@ private slots:
     void on_simpleStartButton_clicked();
 
 
+    void on_mainPagrButton_clicked();
+
 private:
     Ui::PlanntingTrip *ui;
     DBmanager* database;

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_5">
     <attribute name="title">
@@ -139,6 +139,44 @@
       <bool>false</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="mainPagrButton">
+     <property name="geometry">
+      <rect>
+       <x>650</x>
+       <y>10</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <italic>true</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Main Page</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>90</y>
+       <width>401</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/1.png/Baseball.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>label_6</zorder>
     <zorder>label_10</zorder>
     <zorder>simpleFromComboBox</zorder>
@@ -147,6 +185,8 @@
     <zorder>simpleStartButton</zorder>
     <zorder>label_4</zorder>
     <zorder>label_5</zorder>
+    <zorder>mainPagrButton</zorder>
+    <zorder>label</zorder>
    </widget>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -428,8 +468,8 @@ background-color: rgb(211, 211, 211);</string>
     <widget class="QLabel" name="label_13">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>10</y>
+       <x>40</x>
+       <y>20</y>
        <width>121</width>
        <height>41</height>
       </rect>
@@ -452,6 +492,22 @@ background-color: rgb(211, 211, 211);</string>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>571</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/1.png/Stadiums.png);</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>

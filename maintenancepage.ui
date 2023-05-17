@@ -19,9 +19,9 @@
   <widget class="QPushButton" name="SouvenirButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>30</x>
      <y>140</y>
-     <width>221</width>
+     <width>241</width>
      <height>81</height>
     </rect>
    </property>
@@ -54,9 +54,14 @@ background-color: rgb(170, 255, 0);</string>
     <rect>
      <x>310</x>
      <y>140</y>
-     <width>211</width>
+     <width>261</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Stadium information</string>
@@ -84,28 +89,6 @@ background-color: rgb(0, 0, 0);</string>
     <string>Main Page</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="mainPagrButton_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <italic>true</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Stadium Edit</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="readNewData">
    <property name="geometry">
     <rect>
@@ -114,6 +97,11 @@ background-color: rgb(0, 0, 0);</string>
      <width>191</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Add New data</string>

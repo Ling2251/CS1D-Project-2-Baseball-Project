@@ -122,8 +122,8 @@
    <widget class="QLabel" name="BackgroundImag_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>180</y>
+      <x>500</x>
+      <y>190</y>
       <width>491</width>
       <height>421</height>
      </rect>
@@ -153,6 +153,38 @@
      <string>Exit</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>181</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/1.png/Baseball Bat.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>410</y>
+      <width>211</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/1.png/field.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>titelLabel</zorder>
    <zorder>BackgroundImag_2</zorder>
    <zorder>BackgroundImag</zorder>
@@ -160,6 +192,8 @@
    <zorder>displayButton</zorder>
    <zorder>planTripButton</zorder>
    <zorder>exitButton</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
