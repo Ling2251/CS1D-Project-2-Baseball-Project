@@ -1,8 +1,12 @@
 #ifndef SHORTCUSTOMTRIP_H
 #define SHORTCUSTOMTRIP_H
+#include<QLabel>
+#include<QDialog>
 
-#include <QDialog>
-
+struct EdgeS{
+    QString destination;
+    int distance;
+};
 namespace Ui {
 class shortcustomtrip;
 }
@@ -22,6 +26,11 @@ private slots:
 
 private:
     Ui::shortcustomtrip *ui;
+    QMap<QString, QList<EdgeS>> graph;
+    QLabel* distanceLabel;
+
+    void addEdge(const QString& source, const QString& destination, int distance);
+    int calculateDistance(const QString& source, const QString& destination);
 };
 
 #endif // SHORTCUSTOMTRIP_H
