@@ -1,3 +1,10 @@
 <RCC>
-    <qresource prefix="/1.png"/>
+    <qresource prefix="/1.png">
+        <file>Administration.png</file>
+        <file>Baseball Bat.png</file>
+        <file>Baseball.png</file>
+        <file>field.jpg</file>
+        <file>Stadiums.png</file>
+        <file>Stdiums field.jpg</file>
+    </qresource>
 </RCC>
