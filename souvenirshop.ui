@@ -377,7 +377,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;MI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="collegeCostLabel">
+    <widget class="QLabel" name="StadiumCostLabel">
      <property name="geometry">
       <rect>
        <x>570</x>
@@ -397,7 +397,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
       <bool>true</bool>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:696;&quot;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
@@ -543,12 +543,12 @@ color: rgb(0, 0, 0);</string>
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QListWidget" name="StadiumListWidge">
+    <widget class="QListWidget" name="TripOrder">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>350</y>
-       <width>461</width>
+       <x>10</x>
+       <y>351</y>
+       <width>471</width>
        <height>171</height>
       </rect>
      </property>

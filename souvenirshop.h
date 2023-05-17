@@ -2,6 +2,7 @@
 #define SOUVENIRSHOP_H
 
 #include <QDialog>
+#include <QStandardItemModel>
 #include <dbmanager.h>
 
 
@@ -25,7 +26,7 @@ public:
         int quantity;           /**< Number of souvenirs purchased*/
     };
 
-    explicit souvenirShop(vector<QString> stadiums,DBmanager *dbase,QWidget *parent = nullptr);
+    explicit souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager* dbase, QWidget* parent);
     ~souvenirShop();
     void calculateTotal();
     void showSouvCartTableView(QSqlQueryModel *model);
@@ -43,6 +44,8 @@ private slots:
     void on_mainPagrButton_clicked();
 
     void on_doneBuying_clicked();
+
+    void on_SearchButton_clicked();
 
 private:
     Ui::souvenirShop *ui;

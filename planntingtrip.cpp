@@ -106,13 +106,12 @@ void PlanntingTrip::on_simpleStartButton_clicked()
         route.push_back(dest);
     }
 
-    // convert stadium names to team names
     vector<QString> teams;
     QString teamName;
     for (const QString &stadium : route) {
-        qDebug() << "[simpleStartPushButton] stadium name: " << stadium;
+        qDebug() << "[startPushButton] stadium name: " << stadium;
         teamName = database->getStadiumData(stadium);
-        teams.push_back(teamName);
+        teams.push_back(stadium);
     }
 
     // display total distance
@@ -148,7 +147,7 @@ void PlanntingTrip::on_startPushButton_clicked()
         for (const QString &stadium : route) {
             qDebug() << "[startPushButton] stadium name: " << stadium;
             teamName = database->getStadiumData(stadium);
-            teams.push_back(teamName);
+            teams.push_back(stadium);
         }
 
         // display total distance
@@ -185,7 +184,7 @@ void PlanntingTrip::on_startPushButton_clicked()
         QString teamName;
         for (const QString &stadium : stadiumNames) {
             teamName = database->getStadiumData(stadium);
-            teams.push_back(teamName);
+            teams.push_back(stadium);
         }
 
         // display total distance

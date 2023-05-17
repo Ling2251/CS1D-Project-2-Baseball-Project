@@ -2,7 +2,7 @@
 #include "ui_souvenirshop.h"
 #include <mainwindow.h>
 
-souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager *dbase, QWidget *parent) :
+souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager* dbase, QWidget* parent) :
     QDialog(parent),
     ui(new Ui::souvenirShop)
 {
@@ -22,10 +22,12 @@ souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager *dbase, QWidget *
     ui->selectCampus_comboBox->setModel(m_database->loadAllTeam());
 
     stadiumNames = stadiums;
-    for (const auto &stadium : stadiumNames) {
-        ui->StadiumListWidge->addItem(stadium);
+    // populate the stadium information on init
+    for(const auto &stadium : stadiumNames) {
+        ui->TripOrder->addItem(stadium);
         ui->StadiumcomboBox->addItem(stadium);
     }
+
 }
 
 souvenirShop::~souvenirShop()
@@ -162,4 +164,29 @@ void souvenirShop::on_doneBuying_clicked()
 }
 
 
+
+
+void souvenirShop::on_SearchButton_clicked()
+{
+    double eachStadiumPrice = 0.0;
+    QString StadiumName;
+
+    QSqlQuery qry;
+    double cost = 0.00;
+
+    StadiumName = ui->StadiumcomboBox->currentText();
+    ui->SelectedCollegeLabel->setText(StadiumName);
+
+    //qry.prepare("select cost from Cart where collegeName='"+campaseName+"'");
+    qry.prepare("select printf(\"%.2f\",sum(cost * quantity)) from Cart where stadiumName='"+StadiumName+"'");
+    qry.exec();
+    if(qry.next()){
+        cost = (qry.value(0).toDouble());
+    }else{
+        QMessageBox::warning(this, "ERROR", "There is issue with the displaying", QMessageBox::Ok, QMessageBox::NoButton);
+    }
+
+    eachStadiumPrice =  cost;
+    ui->StadiumCostLabel->setNum(eachStadiumPrice);
+}
 

@@ -258,10 +258,10 @@ QString DBmanager::getStadiumData(const QString& stadium)
     QString team;
     QSqlQuery query;
 
-    query.prepare("select team_name FROM stadium_info where stadiumName='"+stadium+'"');
+    query.prepare("select teamName FROM stadium_info where stadiumName='"+stadium+'"');
 
     query.exec();
-    if (!query.next()) {
+    if (query.next()) {
         team = query.value(0).toString();
     }
     return team;
