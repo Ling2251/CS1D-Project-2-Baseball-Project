@@ -5,7 +5,7 @@
 #include <QCoreApplication>
 #include <QFileDialog>
 #include <QTextStream>
-#include "dbmanager.h"
+#include <dbmanager.h>
 
 namespace Ui {
 class intputData;

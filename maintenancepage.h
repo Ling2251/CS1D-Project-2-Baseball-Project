@@ -2,9 +2,9 @@
 #define MAINTENANCEPAGE_H
 
 #include <QDialog>
-#include"souveniredit.h"
-#include"stadiumedit.h"
-#include "intputdata.h"
+#include <souveniredit.h>
+#include <stadiumedit.h>
+#include <intputdata.h>
 
 namespace Ui {
 class maintenancePage;

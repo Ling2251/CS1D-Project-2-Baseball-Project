@@ -6,7 +6,7 @@
 #include <QSortFilterProxyModel>
 #include <QStandardItemModel>
 #include <QTableView>
-#include "dbmanager.h"
+#include <dbmanager.h>
 
 namespace Ui {
 class DisplayPage;

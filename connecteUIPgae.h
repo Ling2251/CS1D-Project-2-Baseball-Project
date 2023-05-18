@@ -3,11 +3,11 @@
 #include <planntingtrip.h>
 #include <loginpage.h>
 #include <displaypage.h>
-#include "dbmanager.h"
-#include "maintenancepage.h"
-#include "souveniredit.h"
+#include <dbmanager.h>
+#include <maintenancepage.h>
+#include <souveniredit.h>
 //#include "intputdata.h"
-#include "souvenirshop.h"
+#include <souvenirshop.h>
 
 
 // This class is mainy for connected all the UIs

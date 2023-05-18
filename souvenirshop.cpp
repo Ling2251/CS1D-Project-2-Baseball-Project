@@ -16,8 +16,6 @@ souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager* dbase, QWidget* 
     // Then create a new shopping cart
     m_database->createCart();
 
-    // testing only
-    showSouvTableView(m_database->loadTeamSouvenirs("Arizona Diamondbacks"));
     // test only
     ui->selectCampus_comboBox->setModel(m_database->loadAllTeam());
 
@@ -26,6 +24,7 @@ souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager* dbase, QWidget* 
     for(const auto &stadium : stadiumNames) {
         ui->TripOrder->addItem(stadium);
         ui->StadiumcomboBox->addItem(stadium);
+        showSouvTableView(m_database->loadTeamSouvenirs(stadium));
     }
 
 }

@@ -2,11 +2,11 @@
 #define STADIUMEDIT_H
 
 #include <QDialog>
-#include"loginpage.h"
-#include"souveniredit.h"
-#include"dbmanager.h"
-#include<qstandarditemmodel>
-#include<QModelIndex>
+#include <loginpage.h>
+#include <souveniredit.h>
+#include <dbmanager.h>
+#include <qstandarditemmodel>
+#include <QModelIndex>
 
 namespace Ui {
 class stadiumEdit;

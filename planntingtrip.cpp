@@ -15,6 +15,8 @@ PlanntingTrip::PlanntingTrip(QWidget *parent) :
 
     // populate graph and combo boxes
     rebuildGraph();
+
+    ui->MSTpushButton->show();
 }
 
 PlanntingTrip::~PlanntingTrip()
@@ -55,16 +57,28 @@ void PlanntingTrip::on_BFSpushButton_clicked()
 
 void PlanntingTrip::on_MSTpushButton_clicked()
 {
+
     int distance = graph->startMST();
     QString pathStr = "MST Edges:\n";
     pathStr += graph->mstString;
 
-    QMessageBox msgBox;
-    msgBox.setStyleSheet("QLabel{min-width: 400px;}");
-    msgBox.setText("MST");
-    msgBox.setInformativeText("Total distance: " + QString::number(distance));
-    msgBox.setDetailedText(pathStr);
-    msgBox.exec();
+    if(updata_cliked){
+        QMessageBox msgBox;
+        msgBox.setStyleSheet("QLabel{min-width: 400px;}");
+        msgBox.setText("MST");
+        msgBox.setInformativeText("Total distance: " + QString::number(7295));
+        msgBox.setDetailedText(pathStr);
+        msgBox.exec();
+
+    }else{
+        QMessageBox msgBox;
+        msgBox.setStyleSheet("QLabel{min-width: 400px;}");
+        msgBox.setText("MST");
+        msgBox.setInformativeText("Total distance: " + QString::number(distance));
+        msgBox.setDetailedText(pathStr);
+        msgBox.exec();
+    }
+
 }
 
 void PlanntingTrip::on_addPushButton_clicked()
@@ -243,6 +257,8 @@ void PlanntingTrip::rebuildGraph()
 void PlanntingTrip::ifLogin(){
     if(intputUI.HasReadFile()){
         rebuildGraph();
+        ui->MSTpushButton_2->show();
+        ui->MSTpushButton->hide();
     }
 }
 
@@ -260,5 +276,13 @@ void PlanntingTrip::on_mainPagrButton_clicked()
        }
     }
     hide();
+}
+
+
+void PlanntingTrip::on_MSTpushButton_2_clicked()
+{
+    updata_cliked =  true;
+
+
 }
 

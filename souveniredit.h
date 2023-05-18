@@ -1,8 +1,8 @@
 #ifndef SOUVENIREDIT_H
 #define SOUVENIREDIT_H
 
-#include "loginpage.h"
-#include "dbmanager.h"
+#include <loginpage.h>
+#include <dbmanager.h>
 #include <QDialog>
 
 namespace Ui {

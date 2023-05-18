@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "connecteUIPgae.h"
+#include <connecteUIPgae.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

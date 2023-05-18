@@ -44,6 +44,8 @@ private slots:
 
     void on_mainPagrButton_clicked();
 
+    void on_MSTpushButton_2_clicked();
+
 private:
     Ui::PlanntingTrip *ui;
     DBmanager* database;
@@ -56,6 +58,7 @@ private:
     souvenirShop *souvenirUI;
     intputData intputUI;
     void ifLogin();
+    bool updata_cliked = false;
 };
 
 #endif // PLANNTINGTRIP_H

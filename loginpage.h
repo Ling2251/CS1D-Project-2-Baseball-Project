@@ -6,8 +6,8 @@
 #include <iomanip>
 #include <QString>
 #include <QMessageBox>
-#include "maintenancepage.h"
-#include"dbmanager.h"
+#include <maintenancepage.h>
+#include <dbmanager.h>
 #include<QPixmap>
 #include <QApplication>
 #include <QMainWindow>
