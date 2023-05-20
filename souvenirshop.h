@@ -47,6 +47,8 @@ private slots:
 
     void on_SearchButton_clicked();
 
+    void on_selectCampus_comboBox_currentTextChanged(const QString &arg1);
+
 private:
     Ui::souvenirShop *ui;
     Souvenir souv;                  /**< struct of the purchased souvenirs*/

@@ -24,8 +24,8 @@ souvenirShop::souvenirShop(vector<QString> stadiums, DBmanager* dbase, QWidget* 
     for(const auto &stadium : stadiumNames) {
         ui->TripOrder->addItem(stadium);
         ui->StadiumcomboBox->addItem(stadium);
-        showSouvTableView(m_database->loadTeamSouvenirs(stadium));
     }
+    showSouvTableView(m_database->loadTeamSouvenirs(ui->selectCampus_comboBox->currentText()));
 
 }
 
@@ -187,5 +187,11 @@ void souvenirShop::on_SearchButton_clicked()
 
     eachStadiumPrice =  cost;
     ui->StadiumCostLabel->setNum(eachStadiumPrice);
+}
+
+
+void souvenirShop::on_selectCampus_comboBox_currentTextChanged(const QString &arg1)
+{
+    showSouvTableView(m_database->loadTeamSouvenirs(ui->selectCampus_comboBox->currentText()));
 }
 
